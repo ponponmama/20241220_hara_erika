@@ -1,17 +1,24 @@
+/*画面全体のstyle*/
+.product {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*商品一覧文字*/
 .products-heading {
   font-size: 1.5rem;
-  margin-left: 20px;
+  margin-left: 10px;
   padding-top: 30px;
   margin-top: 0;
   width: 100%;
 }
 
-/*検索フォームの全体のstyle*/
+/*商品名検索フォームのstyle*/
 .products-search {
-  display: flex;
+  flex: 1;
   flex-direction: column;
   width: 30%;
+  padding:20px;
   margin-left: 20px;
 }
 
@@ -52,7 +59,7 @@
   width: 100%;
   font-size: 1rem;
   color: #999;
-  background-color: white !important;
+  background-color: white;
   border: 1px solid rgb(235, 235, 223);
   line-height: 30px;
   padding-left: 10px;
@@ -80,4 +87,20 @@
 
 .lene_bottom {
   border-bottom: 1px solid rgb(235, 235, 223);
+}
+
+.products-display {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product_list {
+  flex-basis: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
 }
