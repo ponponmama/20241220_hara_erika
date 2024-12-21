@@ -1,0 +1,30 @@
+/*画面全体のstyle*/
+.site_main {
+  background-color: white;
+  
+}
+
+/*headerのstyle*/
+.products-header {
+  display: flex;
+  align-items: baseline;
+}
+
+/*mogitate文字のstyle*/
+.top_logo {
+  color: rgb(255, 217, 0);
+  font-size: 1.5rem;
+  text-align: start;
+  margin-bottom: 0;
+  margin-left: 15px;
+  width: 100%;
+
+}
+
+/*headerの下全体のstyle*/
+.main_container{
+  background-color: rgba(248, 248, 224, 0.596);
+  height: 90vh;
+}
+
+
