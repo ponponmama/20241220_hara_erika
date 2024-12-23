@@ -1,7 +1,6 @@
 /*画面全体のstyle*/
 .site_main {
   background-color: white;
-  
 }
 
 /*headerのstyle*/
@@ -24,7 +23,7 @@
 /*headerの下全体のstyle*/
 .main_container{
   background-color: rgba(248, 248, 224, 0.596);
-  height: 90vh;
+  padding: 4px;
 }
 
 

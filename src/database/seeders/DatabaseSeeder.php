@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // 依存するテーブルのシーダーを先に実行
+        $this->call(SeasonsTableSeeder::class);
+        // その後、製品のシーダーを実行
+        $this->call(ProductsTableSeeder::class);
     }
 }

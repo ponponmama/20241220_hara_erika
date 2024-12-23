@@ -1,25 +1,50 @@
-/*画面全体のstyle*/
-.product {
+/*商品一覧文字と追加ボタンのstyle*/
+.product-container {
   display: flex;
-  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/*商品を追加ボタンのstyle*/
+.add-product-button {
+  width: 14%;
+  background-color: rgb(255, 102, 0);
+  border: 1px solid rgb(255, 102, 0);
+  border-radius: 6px;
+  height: 36px;
+  font-size: 0.8rem;
+  margin: 10px 30px 0 30px;
+  padding: 2px;
+  font-weight: bold;
 }
 
 /*商品一覧文字*/
 .products-heading {
+  box-sizing: border-box;
   font-size: 1.5rem;
-  margin-left: 10px;
-  padding-top: 30px;
-  margin-top: 0;
   width: 100%;
+  margin: 10px 20px;
+  padding: 2px;
+}
+
+/*画面全体のstyle*/
+.product {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
 }
 
 /*商品名検索フォームのstyle*/
 .products-search {
-  flex: 1;
   flex-direction: column;
-  width: 30%;
-  padding:20px;
-  margin-left: 20px;
+  justify-content: center;
+  width: 25%;
+  padding: 2px;
+  margin-left: 10px;
 }
 
 /*検索フォームのstyleの設定*/
@@ -27,24 +52,28 @@
   margin-bottom: 10px;
   border: 1px solid rgb(235, 235, 223);
   border-radius: 20px;
-  height: 40px;
+  width: 100%;
+  height: 36px;
+  outline: none;
+  padding: 4px 20px;
 }
 
 /*検索フォームブレースホルダデフォルトの設定変更*/
 .search_form::placeholder {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #999;
   line-height: 30px;
-  padding-left: 10px;
 }
 
 /*検索ボタンのstyle*/
 .search_button {
-  background-color: rgb(255, 217, 0);
-  border: 1px solid rgb(255, 217, 0);
+  background-color: rgb(255, 174, 0);
+  border: 1px solid rgb(255, 174, 0);
   border-radius: 6px;
-  height: 40px;
+  width: 100%;
+  height: 36px;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 /*カスタムアイコン*/
@@ -57,7 +86,7 @@
 /*Selectのstyle*/
 .price_select {
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #999;
   background-color: white;
   border: 1px solid rgb(235, 235, 223);
@@ -85,22 +114,125 @@
   z-index: 2;
 }
 
+/*価格順で並べ替えの下ライン*/
 .lene_bottom {
   border-bottom: 1px solid rgb(235, 235, 223);
 }
 
-.products-display {
-  flex: 3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+/*価格順で表示の文字*/
+.price-order-label {
+  font-size: 1.2rem;
 }
 
+.sort-tag {
+  display: inline-block;
+  border: 1px solid rgb(255, 174, 0);
+  border-radius: 20px;
+  padding: 8px 10px;
+  margin: 10px 0;
+  font-size: 0.8rem;
+  height: 36px;
+}
+
+.sort-tag .reset-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  
+  margin-left: 10px;
+}
+
+/*イメージ全体のstyle*/
+.products-display {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+/*各イメージのstyle*/
 .product_list {
-  flex-basis: 30%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 1 32%;
+  box-shadow: 0px 0px 2px 2px rgba(212, 211, 211, 0.61);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 0 1.1% 1.1%;
+}
+
+/*イメージ画像のstyle*/
+.list-imge {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/*イメージ画像下の商品名とpriceのstyle*/
+.list-text {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/*取得した商品名のstyle*/
+.list-name {
   margin: 10px;
-  padding: 10px;
-  background: #fff;
-  border-radius: 8px;
+  flex: 7;
+}
+
+/*取得した金額のstyle*/
+.list-price {
+  flex: 3;
+  text-align: right;
+  margin: 16px;
+}
+
+
+/* ページネーションコンテナのスタイル */
+.pagination-container {
+  text-align: center;
+  /* 中央揃え */
+}
+
+/* ページネーション全体のスタイル */
+.pagination {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+}
+
+/* 各ページネーションアイテムのスタイル */
+.pagination .page-item {
+  margin: 0 5px;
+}
+
+/* リンクの基本スタイル */
+.pagination .page-link {
+  color: black;
+  background-color: white;
+  border: 1px solid white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* アクティブなページのスタイル */
+.pagination .page-item.active .page-link {
+  background-color: rgb(255, 174, 0);
+  color: black;
+}
+
+/* 無効なリンクのスタイル */
+.pagination .page-item.disabled .page-link {
+  background-color: white;
+  color: black;
 }
