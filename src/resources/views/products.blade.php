@@ -42,7 +42,7 @@
                     @else
                         価格順で並べ替え
                     @endif
-                    <a href="{{ route('products.index') }}" class="reset-button">☓</a>
+                    <a href="{{ route('products.index') }}" class="reset-button"><span class="cross_image"></span></a>
                 </div>
             @endif
         </form>
