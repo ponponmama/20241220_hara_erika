@@ -1,1 +1,1 @@
- 
+<a href="{{ route('products.register') }}" class="btn btn-primary">商品を追加</a> 

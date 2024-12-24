@@ -17,6 +17,7 @@
     </header>
     <div class="main_container">
       @yield('content')
+      @yield('content-register')
     </div>
   </main>
 </body>

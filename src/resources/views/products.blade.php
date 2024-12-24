@@ -7,23 +7,30 @@
 @section('content')
 
 <div class="product-container">
-    <h2 class="products-heading">
-        商品一覧
-    </h2>
-    <button class="add-product-button">
-        +　商品を追加
-    </button>
+    <div class="title-container">
+        <h2 class="products-heading">
+            商品一覧
+        </h2>
+    </div>
+    <div class="button-container">
+        <a href="{{ route('products.register') }}" class="add-product-button">
+            + 商品を追加
+        </a>
+    </div>
 </div>
+@if (session('success'))
+    <div class="alert-alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="product">
     <div class="products-search">
         <form action="{{ route('products.search')}}" method="GET">
-            <input class="search_form" type="text" name="query" placeholder="商品名で検索">
+            <input class="search_form" type="text" name="query" placeholder="商品名で検索" value="{{ request('query') }}">
             <button type="submit" class="search_button">
                 検索
             </button>
-        </form>
-        <h3 class="price-order-label">価格順で表示</h3>
-        <form action="{{ route('products.index') }}" method="GET">
+            <h3 class="price-order-label">価格順で表示</h3>
             <div class="select-wrapper">
                 <select class="price_select" name="price_search" onchange="this.form.submit()">
                     <option value="" class="price_text">価格順で並べ替え</option>
