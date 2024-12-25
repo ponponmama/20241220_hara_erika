@@ -5,8 +5,8 @@
 @endsection
 
 @section('content-register')
-<div class="container">
-    <h1>商品登録</h1>
+<div class="register-container">
+    <h1 class="product-registration-title">商品登録</h1>
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" class="register-form">
         @csrf
         <div class="form-group">

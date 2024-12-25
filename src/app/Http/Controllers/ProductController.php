@@ -37,7 +37,7 @@ class ProductController extends Controller
             $query->where('name', 'like', '%' . $searchTerm . '%');
         }
 
-        // セッションから価格ソートオプションを取得または更新
+        // セッション��ら価格ソートオプションを取得または更新
         if ($request->has('price_search')) {
             $priceSearch = $request->input('price_search');
             session(['price_search' => $priceSearch]);
@@ -63,7 +63,7 @@ class ProductController extends Controller
     // 商品登録ページを表示
     public function register()
     {
-        return view('products.register');
+        return view('register');
     }
 
     //商品登録ページの処理
@@ -88,5 +88,16 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('success', '商品が登録されました。');
     }
+
+    public function show($productId)
+    {
+        $product = Product::find($productId);
+        if (!$product) {
+            abort(404);
+        }
+        return view('product_detail', compact('product'));
+    }
+
+    
     
 }

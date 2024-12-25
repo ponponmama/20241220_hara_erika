@@ -1,0 +1,49 @@
+/*パンくずリスト*/
+.breadcrumb {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 1rem;
+    margin: 5% 15%;
+}
+
+/*パンくずリスト内リンク*/
+.breadcrumb-link {
+    color: #007bff;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+
+.product_detail-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.detail-image {
+    width: 50%;
+}
+
+.update-form {
+    width: 50%;
+}
+/* 隠れたファイル入力フィールドのスタイル（"ファイルが選択されていません"のテキストを隠すため） */
+.hidden {
+    display: none;
+}
+
+/* ファイル選択ボタンのカスタムスタイル */
+.btn-select-file {
+    background-color: #f0f0f0;
+    border: 1px solid #bbbaba;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* 選択されたファイル名を表示するスタイル */
+.file-name-display {
+    margin-left: 10px;
+}

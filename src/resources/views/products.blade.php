@@ -39,7 +39,7 @@
                 </select>
                 <span class="custom-select-icon"></span>
             </div>
-            <p class="lene_bottom"></p>
+            <p class="line_bottom"></p>
             @if(request('price_search'))
                 <div class="sort-tag">
                     @if(request('price_search') == 'high_to_low')
@@ -57,7 +57,9 @@
     <div class="products-display">
         @foreach ($products as $product)
             <div class="product_list">
-                <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}" class="list-imge">
+                <a href="{{ route('products.show', ['productId' => $product->id]) }}" class="product-detail-link">
+                    <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}" class="list-image">
+                </a>
                 <div class="list-text">
                     <span class="list-name">{{ $product->name }}</span>
                     <span class="list-price">¥{{ number_format($product->price) }}</span>
@@ -67,6 +69,6 @@
     </div>
 </div>
 <div class="pagination-container">
-    {{ $products->links() }} 
+    {{ $products->links() }}
 </div>
 @endsection

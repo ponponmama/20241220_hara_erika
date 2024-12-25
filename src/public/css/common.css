@@ -1,5 +1,15 @@
+/*bodyのstyle*/
+.common_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
 /*画面全体のstyle*/
 .site_main {
+  width: 100%;
   background-color: white;
 }
 
@@ -26,4 +36,10 @@
   padding: 4px;
 }
 
-
+@media screen and (max-width: 768px) {
+    .common_body {
+        height: auto;
+        min-height: 100vh;
+        overflow: auto;
+    }
+}
