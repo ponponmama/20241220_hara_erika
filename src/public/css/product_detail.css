@@ -1,11 +1,21 @@
+/* 商品詳細ページのコンテナスタイル */
+.product_detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 /*パンくずリスト*/
 .breadcrumb {
-    width: 60%;
     display: flex;
-    align-items: center;
     white-space: nowrap;
     font-size: 1rem;
-    margin: 5% 15%;
+    width: 60%;
+    justify-content: flex-start;
+    margin-top: 10%;
+    margin-bottom: 10px;
 }
 
 /*パンくずリスト内リンク*/
@@ -15,35 +25,222 @@
     text-decoration: none;
 }
 
-
-.product_detail-container {
+/*ボタンを含むform全体のstyle*/
+.update-form {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     width: 60%;
 }
 
-.detail-image {
-    width: 50%;
+/*チェックボックスまでのcontainer*/
+.product-options-container {
+    display: flex;
 }
 
-.update-form {
-    width: 50%;
+/*イメージ画像＆ファイルを選択&入力フィールド*/
+.image-section, .form-group {
+    flex: 1 0 50%;
 }
-/* 隠れたファイル入力フィールドのスタイル（"ファイルが選択されていません"のテキストを隠すため） */
-.hidden {
-    display: none;
+
+/*イメージ画像＆ファイルを選択*/
+.image-section {
+    margin: 0 5px 5px 0;
+}
+
+/*画像イメージ*/
+.detail-image {
+    width: 100%;
+}
+
+/*商品名＆値段＆チェックボックス*/
+.form-group {
+    margin: 0 0 5px 5px;
+}
+
+/*商品説明＆戻るlink＆変更ボタン*全体のstyle*/
+.form-group-description {
+    display: flex;
+    flex-direction: column;
 }
 
 /* ファイル選択ボタンのカスタムスタイル */
 .btn-select-file {
     background-color: #f0f0f0;
     border: 1px solid #bbbaba;
-    padding: 6px 12px;
+    padding: 6px 14px;
     cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* 選択されたファイル名を表示するスタイル */
 .file-name-display {
     margin-left: 10px;
+    font-size: 0.8rem;
+}
+
+/* 隠れたファイル入力フィールド（"ファイルが選択されていません"のテキストを隠す） */
+.hidden {
+    display: none;
+}
+
+/*labelのstyle*/
+.label-control {
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+}
+
+/*入力フィールドのstyle*/
+.input-control {
+    width: 100%;
+}
+
+/*バリデーションmessage*/
+.form__error {
+    height: 22px;
+    line-height: 22px;
+    color: #ff0000;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/*ラジオボタンの外枠LINEのstyle*/
+.season-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+}
+
+.season-checkbox:checked {
+    background-color: black;
+}
+
+.season-checkbox:checked::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+}
+
+/*チェックボックスそれぞれのstyle*/
+.season-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*description＆ボタン*/
+.form-group-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*商品説明文*/
+.description-control {
+    width: 100%;
+    height: 150px;
+}
+
+/*ボタンcontainer*/
+.update-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/*戻るボタン*/
+.return-button {
+    display: block;
+    background-color: #999;
+    border: 1px solid #999;
+    border-radius: 6px;
+    width: 25%;
+    height: 40px;
+    font-size: 0.8rem;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+}
+
+/*変更ボタン*/
+.update-button {
+    background-color: rgb(255, 102, 0);
+    border: 1px solid rgb(255, 102, 0);
+    border-radius: 6px;
+    width: 25%;
+    height: 40px;
+    font-size: 0.8rem;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+}
+
+/*ダストボックス*/
+.icon-dustbox {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+}
+
+@media screen and (max-width: 768px){
+    /*ボタンを含むform全体のstyle*/
+    .update-form {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    /*チェックボックスまでのcontainer*/
+    .product-options-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*バリデーションmessage*/
+    .form__error {
+        font-size: 1rem;
+    }
+
+    /*description＆ボタン*/
+    .form-group-description {
+    display: flex;
+    }
+
+    /*戻るボタン*/
+    .return-button {
+        width: 35%;
+    }
+
+    /*変更ボタン*/
+    .update-button {
+        width: 35%;
+    }
+
+    .icon-dustbox {
+        transform: translateY(-16%);
+    }
 }

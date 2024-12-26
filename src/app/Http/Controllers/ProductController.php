@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Season;
 use App\Models\Product;
 use App\Http\Requests\RegisterProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
 {
@@ -18,7 +19,7 @@ class ProductController extends Controller
         // 商品一覧ビューを表示
         return view('products', compact('products'));
     }
-    
+
     //検索search
     public function search(Request $request)
     {
@@ -37,7 +38,7 @@ class ProductController extends Controller
             $query->where('name', 'like', '%' . $searchTerm . '%');
         }
 
-        // セッション��ら価格ソートオプションを取得または更新
+        // セッションから価格ソートオプションを取得または更新
         if ($request->has('price_search')) {
             $priceSearch = $request->input('price_search');
             session(['price_search' => $priceSearch]);
@@ -76,7 +77,7 @@ class ProductController extends Controller
 
         $product = new Product($validatedData);
         if ($request->hasFile('image')) {
-            $filename = $request->image->store('image', 'public');
+            $filename = $request->image->store('images', 'public');
             $product->image = $filename;
         }
         $product->save();
@@ -89,15 +90,40 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', '商品が登録されました。');
     }
 
+    //詳細表示
     public function show($productId)
     {
-        $product = Product::find($productId);
-        if (!$product) {
-            abort(404);
-        }
-        return view('product_detail', compact('product'));
+        $product = Product::with('seasons')->findOrFail($productId);
+        $seasons = Season::all();
+        return view('product_detail', compact('product', 'seasons'));
     }
 
-    
-    
+    // 商品削除
+    public function delete($productId)
+    {
+        $product = Product::findOrFail($productId);
+        $product->delete();
+
+        return redirect()->route('products.index')->with('success', '商品が削除されました。');
+    }
+
+    // 商品更新
+    public function update(UpdateProductRequest $request, $productId)
+    {
+        dd($request->all());
+        $product = Product::findOrFail($productId);
+        $validatedData = $request->validated();
+
+        $product->update($validatedData);
+
+        if ($request->hasFile('image')) {
+            $filename = $request->image->store('images', 'public');
+            $product->image = $filename;
+        }
+
+        $product->save();
+
+        return redirect()->route('products.index', ['productId' => $productId])->with('success', '商品情報が更新されました。');
+    }
+
 }

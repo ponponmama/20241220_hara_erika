@@ -10,8 +10,10 @@
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" class="register-form">
         @csrf
         <div class="form-group">
-            <label for="name">商品名</label>
-            <span class="required-label">必須</span>
+            <label for="name" class="form-label">
+                商品名
+                <span class="required-label">必須</span>
+            </label>
         </div>
         <input type="text" class="form-control" id="name" name="name" placeholder="商品名を入力">
         <div class="form__error">
@@ -20,8 +22,10 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="price">値段</label>
-            <span class="required-label">必須</span>
+            <label for="price" class="form-label">
+                値段
+                <span class="required-label">必須</span>
+            </label>
         </div>
         <input type="number" class="form-control" id="price" name="price" placeholder="値段を入力">
         <div class="form__error">
@@ -30,32 +34,35 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="image">商品画像</label>
-            <span class="required-label">必須</span>
+            <label for="image" class="form-label">
+                商品画像
+                <span class="required-label">必須</span>
+            </label>
         </div>
-        <input type="file" class="form-control-file" id="image" name="image">
+        <input type="file" class="form-control-file" id="image" name="image" onchange="previewImage();">
+        <img id="image-preview" src="#" alt="" class="image-preview">
         <div class="form__error">
             @error('image')
                 {{ $message }}
             @enderror
         </div>
         <div class="form-group">
-            <label for="season">季節</label>
+            <span class="season">季節</span>
             <span class="required-label">必須</span>
-            <p class="multiple-select">複数選択可</p>
+            <span class="multiple-select">複数選択可</span>
         </div>
-        <div class="radio_button">
-            <label for="spring">
-                <input type="checkbox" name="season[]" value="spring" id="spring" class="season-spring"> 春
+        <div class="season-check-container">
+            <label for="spring" class="season-label">
+                <input type="checkbox" name="season[]" value="春" id="spring" class="season-spring"> 春
             </label>
-            <label for="summer">
-                <input type="checkbox" name="season[]" value="summer" id="summer" class="season-select"> 夏
+            <label for="summer" class="season-label">
+                <input type="checkbox" name="season[]" value="夏" id="summer" class="season-select"> 夏
             </label>
-            <label for="autumn">
-                <input type="checkbox" name="season[]" value="autumn" id="autumn" class="season-select"> 秋
+            <label for="autumn" class="season-label">
+                <input type="checkbox" name="season[]" value="秋" id="autumn" class="season-select"> 秋
             </label>
-            <label for="winter">
-                <input type="checkbox" name="season[]" value="winter" id="winter" class="season-sinter"> 冬
+            <label for="winter" class="season-label">
+                <input type="checkbox" name="season[]" value="冬" id="winter" class="season-sinter"> 冬
             </label>
         </div>
         <div class="form__error">
@@ -64,10 +71,13 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="description">商品説明</label>
-            <span class="required-label">必須</span>
+            <label for="description" class="description-label">
+                商品説明
+                <span class="required-label">必須</span>
+            </label>
         </div>
-        <textarea class="description-control" id="description" name="description"  placeholder="商品の説明を入力"></textarea>
+        <textarea class="description-control" id="description" name="description" placeholder="商品の説明を入力"
+            autocomplete="off"></textarea>
         <div class="form__error">
             @error('description')
                 {{ $message }}
@@ -79,4 +89,24 @@
         </div>
     </form>
 </div>
+<script>
+    function previewImage() {
+    var file = document.getElementById("image").files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function() {
+    var preview = document.getElementById("image-preview");
+    preview.src = reader.result;
+    preview.style.display = 'block';
+    }
+
+    if (file) {
+    reader.readAsDataURL(file);
+    } else {
+    var preview = document.getElementById("image-preview");
+    preview.src = "";
+    preview.style.display = 'none';
+    }
+}
+</script>
 @endsection

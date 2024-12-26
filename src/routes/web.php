@@ -16,7 +16,10 @@ Route::get('/register', [ProductController::class, 'register'])->name('products.
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
 
 //商品詳細ページのルート
-Route::get('/products{productId}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/products/{productId}', [ProductController::class, 'show'])->name('products.show');
 
 //変更画面のルート
-Route::put('/products{productId}', [ProductController::class, 'update'])->name('products.update');
+Route::put('/products/{productId}', [ProductController::class, 'update'])->name('products.update');
+
+// 商品削除のルート
+Route::delete('/products/{productId}/delete', [ProductController::class, 'delete'])->name('products.delete');

@@ -13,4 +13,9 @@ class Season extends Model
     {
         return $this->belongsToMany(Product::class, 'product_season');
     }
+
+    public function seasons()
+    {
+        return $this->belongsToMany(Season::class);
+    }
 }

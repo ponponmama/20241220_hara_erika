@@ -32,4 +32,4 @@ class CreateProductSeasonTable extends Migration
     {
         Schema::dropIfExists('product_season');
     }
-} 
+}
