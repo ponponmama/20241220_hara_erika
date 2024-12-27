@@ -16,7 +16,7 @@
             商品一覧
         </a>＞ {{ $product->name }}
     </div>
-    <form action="{{ route('products.update', ['productId' => $product->id]) }}" method="POST" enctype="multipart/form-data"  class="update-form">
+    <form id="update-form" action="{{ route('products.update', ['productId' => $product->id]) }}" method="POST" enctype="multipart/form-data"  class="update-form">
         @csrf
             @method('PUT')
                 <div class="product-options-container">
@@ -76,7 +76,7 @@
     <div class="button-container">
         <div class="update-button-container">
             <a href="{{ url('products/') }}" class="return-button">戻る</a>
-            <button type="submit" class="update-button">変更を保存</button>
+            <button type="submit" form="update-form" class="update-button">変更を保存</button>
         </div>
         <form action="{{ route('products.delete', ['productId' => $product->id]) }}" method="POST"
         onsubmit="return confirm('本当に削除しますか？');" class="delete-form">
