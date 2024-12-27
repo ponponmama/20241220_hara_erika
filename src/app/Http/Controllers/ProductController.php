@@ -7,6 +7,7 @@ use App\Models\Season;
 use App\Models\Product;
 use App\Http\Requests\RegisterProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Arr;
 
 class ProductController extends Controller
 {
@@ -110,20 +111,26 @@ class ProductController extends Controller
     // 商品更新
     public function update(UpdateProductRequest $request, $productId)
     {
-        dd($request->all());
         $product = Product::findOrFail($productId);
         $validatedData = $request->validated();
 
-        $product->update($validatedData);
+        // 'season' データを除外して更新
+        $dataToUpdate = Arr::except($validatedData, ['season']);
+        $product->update($dataToUpdate);
 
+        // 画像の更新処理
         if ($request->hasFile('image')) {
             $filename = $request->image->store('images', 'public');
             $product->image = $filename;
+        }
+
+        // season の更新
+        if (isset($validatedData['season'])) {
+            $product->seasons()->sync($validatedData['season']);
         }
 
         $product->save();
 
         return redirect()->route('products.index', ['productId' => $productId])->with('success', '商品情報が更新されました。');
     }
-
 }

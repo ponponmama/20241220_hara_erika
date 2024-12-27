@@ -39,8 +39,12 @@
                 <span class="required-label">必須</span>
             </label>
         </div>
-        <input type="file" class="form-control-file" id="image" name="image" onchange="previewImage();">
-        <img id="image-preview" src="#" alt="" class="image-preview">
+        <div class="custom-file">
+            <input type="file" id="image" name="image" class="hidden" onchange="previewImage();">
+            <img id="image-preview" src="#" alt="" class="image-preview">
+            <button type="button" onclick="document.getElementById('image').click();" class="btn-select-file">ファイルを選択</button>
+            <span class="file-name-display"></span>
+        </div>
         <div class="form__error">
             @error('image')
                 {{ $message }}

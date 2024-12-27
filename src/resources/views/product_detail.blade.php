@@ -16,16 +16,16 @@
             商品一覧
         </a>＞ {{ $product->name }}
     </div>
-    <form action="{{ route('products.update', ['productId' => $product->id]) }}" method="POST" class="update-form">
+    <form action="{{ route('products.update', ['productId' => $product->id]) }}" method="POST" enctype="multipart/form-data"  class="update-form">
         @csrf
             @method('PUT')
                 <div class="product-options-container">
                     <div class="image-section">
-                        <img src="{{ asset('storage/' . $product->image) }}" class="detail-image" alt="商品画像">
+                        <img id="detail-image" src="{{ asset('storage/' . $product->image) }}" class="detail-image" alt="商品画像">
                         <div class="custom-file">
-                            <input type="file" id="image" name="image" class="hidden">
+                            <input type="file" id="image" name="image" class="hidden" onchange="previewImage();">
                             <button type="button" onclick="document.getElementById('image').click();" class="btn-select-file">ファイルを選択</button>
-                            <span class="file-name-display">{{ basename($product->image) }}</span>
+                            <span id="file-name-display" class="file-name-display">{{ basename($product->image) }}</span>
                         </div>
                         <div class="form__error">
                             @error('image')
@@ -74,24 +74,34 @@
                     <div class="update-button-container">
                         <a href="{{ url('products/') }}" class="return-button">戻る</a>
                         <button type="submit" class="update-button">変更を保存</button>
-                        <a href="{{ route('products.delete', ['productId' => $product->id]) }}" class="delete-button" onclick="return confirm('本当に削除しますか？');">
-                            <img src="{{ asset('images/dustbox.png') }}" alt="Dustbox" class="icon-dustbox">
-                        </a>
                     </div>
                 </div>
     </form>
+    <form action="{{ route('products.delete', ['productId' => $product->id]) }}" method="POST"
+        onsubmit="return confirm('本当に削除しますか？');">
+        @csrf
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="delete-button">
+            <img src="{{ asset('images/dustbox.png') }}" alt="削除">
+        </button>
+    </form>
 </div>
 <script>
-    document.getElementById('image').addEventListener('change', function() {
-        var fileName = this.files[0].name;
-        var validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
-        var fileExtension = fileName.split('.').pop().toLowerCase();
-        if (!validExtensions.includes(fileExtension)) {
-            alert('無効なファイル形式です。');
-            this.value = '';  // フォームの値をクリア
-        } else {
-            document.querySelector('.file-name-display').textContent = fileName;
+    function previewImage() {
+        var file = document.getElementById('image').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            document.getElementById('detail-image').src = reader.result;
         }
-    });
+
+        if (file) {
+            reader.readAsDataURL(file);
+            document.getElementById('file-name-display').textContent = file.name;
+        } else {
+            document.getElementById('detail-image').src = "{{ asset('storage/' . $product->image) }}";
+            document.getElementById('file-name-display').textContent = "{{ basename($product->image) }}";
+        }
+    }
 </script>
 @endsection
