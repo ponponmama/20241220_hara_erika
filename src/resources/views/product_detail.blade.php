@@ -71,20 +71,22 @@
                             {{ $message }}
                         @enderror
                     </div>
-                    <div class="update-button-container">
-                        <a href="{{ url('products/') }}" class="return-button">戻る</a>
-                        <button type="submit" class="update-button">変更を保存</button>
-                    </div>
                 </div>
     </form>
-    <form action="{{ route('products.delete', ['productId' => $product->id]) }}" method="POST"
-        onsubmit="return confirm('本当に削除しますか？');">
-        @csrf
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" class="delete-button">
-            <img src="{{ asset('images/dustbox.png') }}" alt="削除">
-        </button>
-    </form>
+    <div class="button-container">
+        <div class="update-button-container">
+            <a href="{{ url('products/') }}" class="return-button">戻る</a>
+            <button type="submit" class="update-button">変更を保存</button>
+        </div>
+        <form action="{{ route('products.delete', ['productId' => $product->id]) }}" method="POST"
+        onsubmit="return confirm('本当に削除しますか？');" class="delete-form">
+            @csrf
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="delete-button">
+                    <img src="{{ asset('images/dustbox.png') }}" alt="削除">
+                </button>
+        </form>
+    </div>
 </div>
 <script>
     function previewImage() {

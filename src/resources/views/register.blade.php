@@ -43,7 +43,7 @@
             <input type="file" id="image" name="image" class="hidden" onchange="previewImage();">
             <img id="image-preview" src="#" alt="" class="image-preview">
             <button type="button" onclick="document.getElementById('image').click();" class="btn-select-file">ファイルを選択</button>
-            <span class="file-name-display"></span>
+            <span id="file-name-display"></span>
         </div>
         <div class="form__error">
             @error('image')
@@ -95,22 +95,24 @@
 </div>
 <script>
     function previewImage() {
-    var file = document.getElementById("image").files[0];
-    var reader = new FileReader();
+        var file = document.getElementById('image').files[0];
+        var reader = new FileReader();
 
-    reader.onloadend = function() {
-    var preview = document.getElementById("image-preview");
-    preview.src = reader.result;
-    preview.style.display = 'block';
-    }
+        reader.onloadend = function() {
+            var preview = document.getElementById('image-preview');
+            preview.src = reader.result;
+            preview.style.display = 'block';
+        }
 
-    if (file) {
-    reader.readAsDataURL(file);
-    } else {
-    var preview = document.getElementById("image-preview");
-    preview.src = "";
-    preview.style.display = 'none';
+        if (file) {
+            reader.readAsDataURL(file);
+            document.getElementById('file-name-display').textContent = file.name;
+        } else {
+            var preview = document.getElementById('image-preview');
+            preview.src = "";
+            preview.style.display = 'none';
+            document.getElementById('file-name-display').textContent = "";
+        }
     }
-}
 </script>
 @endsection

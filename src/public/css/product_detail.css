@@ -155,15 +155,20 @@
     height: 150px;
 }
 
-/*ボタンcontainer*/
+.button-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+/*戻るボタン＆変更container*/
 .update-button-container {
-    width: 100%;
+    flex: 9;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
-    margin-bottom: 20px;
 }
 
 /*戻るボタン*/
@@ -172,7 +177,7 @@
     background-color: #999;
     border: 1px solid #999;
     border-radius: 6px;
-    width: 25%;
+    width: 30%;
     height: 40px;
     font-size: 0.8rem;
     padding: 10px;
@@ -180,6 +185,7 @@
     text-decoration: none;
     margin: 10px;
     color: black;
+    cursor: pointer;
 }
 
 /*変更ボタン*/
@@ -187,7 +193,7 @@
     background-color: rgb(255, 102, 0);
     border: 1px solid rgb(255, 102, 0);
     border-radius: 6px;
-    width: 25%;
+    width: 30%;
     height: 40px;
     font-size: 0.8rem;
     padding: 10px;
@@ -195,18 +201,21 @@
     text-decoration: none;
     margin: 10px;
     color: black;
+    cursor: pointer;
 }
 
+.delete-form {
+    flex: 1;
+    width: 24px;
+    height: 24px;
+}
+
+/*削除ボタン*/
 .delete-button {
     border: none;
     background: none;
     padding: 0;
     cursor: pointer;
-    display: inline-block;
-    position: absolute;
-    right: 22%;
-    bottom: 25%;
-    transform: translateX(-50%);
 }
 
 /*ダストボックス*/
@@ -253,25 +262,45 @@
         height: 120px;
     }
 
-    /*ボタンcontainer*/
+    /*戻る＆変更＆削除*/
+    .button-container {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
+    /*戻る＆変更ボタン*/
     .update-button-container {
         margin-bottom: 10px;
     }
 
     /*戻るボタン*/
     .return-button {
-        width: 35%;
+        width: 32%;
     }
 
     /*変更ボタン*/
     .update-button {
-        width: 35%;
+        width: 32%;
     }
 
-    /*削除ボタンのstyle*/
+    /*delete用formsのstyle*/
+    .delete-form {
+        flex: 1;
+        width: 24px;
+        height: 24px;
+    }
+
+    /*削除ボタン*/
     .delete-button {
-        right: 8%;
-        bottom: -33%;
-        transform: translateY(-50%);
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    /*ダストボックス*/
+    .delete-button img {
+        width: 18px;
+        height: 18px;
     }
 }
