@@ -11,7 +11,7 @@
 .product-registration-title {
     width: 60%;
     text-align: left;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-top: 5%;
 }
 
@@ -22,8 +22,8 @@
 
 /*バリデーションmessage*/
 .form__error {
-    height: 22px;
-    line-height: 22px;
+    height: 20px;
+    line-height: 20px;
     color: #ff0000;
     text-align: left;
     font-size: 0.8rem;
@@ -51,17 +51,28 @@
 /* ファイル選択ボタンのカスタムスタイル */
 .btn-select-file {
     background-color: #f0f0f0;
-    border: 1px solid #bbbaba;
+    border: 1px solid #999;
     padding: 6px 14px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    border-radius: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.btn-select-file:hover {
+    background-color: #b3b2b2;
 }
 
 /* 選択されたファイル名を表示するスタイル */
 .file-name-display {
     margin-left: 10px;
     font-size: 0.8rem;
+}
+
+/*選択した画像*/
+.image-preview {
+    width: 60%;
 }
 
 /* 隠れたファイル入力フィールド（"ファイルが選択されていません"のテキストを隠す） */
@@ -73,7 +84,7 @@
 
 /*季節文字*/
 .season {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 /*チェックボックス*/
@@ -129,6 +140,7 @@ input[type="checkbox"]:checked::after {
     width: 100%;
     display: flex;
     align-items: center;
+    font-size: 1rem;
 }
 
 /*label*/
@@ -139,13 +151,17 @@ input[type="checkbox"]:checked::after {
 /*input*/
 .form-control {
     width: 100%;
-    height: 32px;
+    height: 30px;
+    border: 1px solid rgb(219,219,204);
+    border-radius: 6px;
 }
 
 /*商品説明フォーム*/
 .description-control {
     width: 100%;
-    height: 150px;
+    border: 1px solid rgb(219,219,204);
+    border-radius: 6px;
+    height: 140px;
 }
 
 /*戻るlink＆登録button親要素*/
@@ -161,7 +177,7 @@ input[type="checkbox"]:checked::after {
 /*戻るボタン*/
 .return-button {
     display: block;
-    background-color: #999;
+    background-color: rgb(219,219,204);
     border: 1px solid #999;
     border-radius: 6px;
     width: 25%;
@@ -172,6 +188,11 @@ input[type="checkbox"]:checked::after {
     text-decoration: none;
     margin: 20px 10px 0 0;
     color: black;
+    cursor: pointer;
+}
+
+.return-button:hover {
+    background-color: #b3b2b2;
 }
 
 /*登録ボタン*/
@@ -187,6 +208,11 @@ input[type="checkbox"]:checked::after {
     text-decoration: none;
     margin: 20px 10px 0 0;
     color: black;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: rgb(230,94,3);
 }
 
 @media screen and (max-width: 768px) {
@@ -246,14 +272,16 @@ input[type="checkbox"]:checked::after {
     /*戻るボタン*/
     .return-button {
         width: 30%;
-        height: 36px;
+        height: 40px;
         margin: 4px 10px 0 0;
+        padding: auto;
     }
 
     /*登録ボタン*/
     .register-button {
         width: 30%;
-        height: 36px;
+        height: 40px;
         margin: 4px 10px 0 0;
+        padding: auto;
     }
 }
