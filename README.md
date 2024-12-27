@@ -127,7 +127,7 @@ php artisan config:clear
 
 ```bash
 php artisan storage:link
-````
+```
 
 次に、これらのディレクトリに適切なパーミッションを設定してください。これにより、アプリケーションがファイルを適切に読み書きできるようになります。
 
@@ -163,3 +163,4 @@ php artisan db:seed
 
 - **開発環境:** [https://localhost/](https://localhost/)
 - **phpMyAdmin:** [http://localhost:8080/](http://localhost:8080/)
+````
