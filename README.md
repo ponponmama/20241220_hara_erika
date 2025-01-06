@@ -76,6 +76,9 @@
 
 ```bash
 git clone https://github.com/ponponmama/20241220_hara_erika.git
+```
+
+```bash
 cd 20241220_hara_erika
 ```
 
@@ -97,6 +100,9 @@ docker-compose up -d --build
 
 ```bash
 docker-compose exec php bash
+```
+
+```bash
 composer install
 ```
 
@@ -112,6 +118,9 @@ cp .env.example .env
 
 ```bash
 docker-compose exec php bash
+```
+
+```bash
 php artisan config:clear
 ```
 
@@ -132,7 +141,13 @@ php artisan storage:link
 
 ```bash
 chmod -R 775 /var/www/storage/app/public/images
+```
+
+```bash
 chmod -R 775 /var/www/storage/app/public/qr_codes
+```
+
+```bash
 chown -R www-data:www-data /var/www/storage/app/public
 ```
 
