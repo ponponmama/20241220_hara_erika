@@ -84,7 +84,7 @@ cd 20241220_hara_erika
 
 2. 必要なパッケージのインストール
 
-```bash　
+```bash
 sudo apt-get update
 ```
 
