@@ -18,9 +18,8 @@
     box-sizing: border-box;
     font-size: 1.5rem;
     width: 100%;
-    margin-left: 18px;
-    padding: 2px;
     margin: 20px 10px 10px 10px;
+    padding: 2px;
 }
 
 /*商品を追加ボタンの親要素*/
@@ -174,11 +173,10 @@
     border: 1px solid rgb(255, 174, 0);
     border-radius: 20px;
     margin: 10px 0;
-    padding-left: 10px;
-    font-size: 0.8rem;
     padding: 2px 10px;
     height: 36px;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
 /*価格順で表示リセットボタン*/
@@ -205,7 +203,6 @@
     position: absolute;
     top: 4px;
     left: 0px;
-
 }
 
 .cross_image:hover::before {
@@ -271,61 +268,9 @@
     margin: 16px;
 }
 
-/* ページネーションコンテナのスタイル */
-.pagination-container {
-    text-align: center;
-}
-
-/* ページネーション全体のスタイル */
-.pagination {
-    display: inline-flex;
-    list-style: none;
-    padding: 0;
-}
-
-/* 各ページネーションアイテムのスタイル */
-.pagination .page-item {
-    margin: 0 5px;
-}
-
-/* リンクの基本スタイル */
-.pagination .page-link {
-    color: black;
-    background-color: white;
-    border: 1px solid white;
-    padding: 6px 8px;
-    text-decoration: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-/* ページネーションリンクのホバー時のスタイル */
-.pagination .page-link:hover {
-    background-color: #999;
-    color: black;
-    border-color: rgb(219, 219, 204);
-}
-
-/* アクティブなページのスタイル */
-.pagination .page-item.active .page-link {
-    background-color: rgb(255, 102, 0);
-    color: black;
-}
-
-/* 無効なリンクのスタイル */
-.pagination .page-item.disabled .page-link {
-    background-color: white;
-    color: black;
-}
-
-
 @media screen and (max-width: 768px) {
     /*商品を追加ボタンの親要素*/
     .button-container {
-        display: flex;
         width: 50%;
     }
 
@@ -344,7 +289,6 @@
         flex-direction: column;
         margin: 5%;
     }
-
 
     /*商品名検索フォームのstyle*/
     .products-search {

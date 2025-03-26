@@ -6,9 +6,9 @@
 
 @section('content')
 @if ($errors->has('image'))
-<div class="alert alert-danger">
-    {{ $errors->first('image') }}
-</div>
+    <p class="alert alert-danger">
+        {{ $errors->first('image') }}
+    </p>
 @endif
 <div class="product_detail-container">
     <div class="breadcrumb">

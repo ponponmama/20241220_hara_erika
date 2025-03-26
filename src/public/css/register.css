@@ -1,26 +1,58 @@
-/*title以下の画面すべてのstyle*/
+/* 共通のスタイル */
+.form-control,
+.description-control,
+.btn-select-file,
+.return-button,
+.register-button {
+    border-radius: 6px;
+}
+
+.form-control,
+.description-control {
+    width: 100%;
+    border: 1px solid rgb(219,219,204);
+}
+
+.form-control {
+    height: 30px;
+}
+
+.description-control {
+    height: 120px;
+}
+
+/* コンテナとフォーム */
 .register-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-/*商品登録文字*/
 .product-registration-title {
     width: 60%;
     text-align: left;
     font-size: 1.5rem;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
-/*formのstyle*/
 .register-form {
     width: 60%;
 }
 
-/*バリデーションmessage*/
+/* フォーム要素 */
+.form-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.form-label {
+    width: 100%;
+}
+
+/* エラーと必須 */
 .form__error {
     height: 20px;
     line-height: 20px;
@@ -31,32 +63,34 @@
     margin-top: 2px;
 }
 
-/*必須*/
+.required-label,
+.multiple-select {
+    font-size: 0.8rem;
+}
+
 .required-label {
     display: inline-block;
     border: 1px solid red;
     background-color: red;
     color: white;
-    font-size: 0.8rem;
     vertical-align: middle;
     margin: 5px 10px;
 }
 
-/*複数選択可*/
 .multiple-select {
     color: red;
     margin: 10px;
 }
 
-/* ファイル選択ボタンのカスタムスタイル */
+/* ファイル選択 */
+.custom-file {
+    margin: 10px 0;
+}
+
 .btn-select-file {
     background-color: #f0f0f0;
     border: 1px solid #999;
     padding: 6px 14px;
-    cursor: pointer;
-    border-radius: 6px;
-    margin-top: 5px;
-    margin-bottom: 5px;
     cursor: pointer;
 }
 
@@ -64,36 +98,31 @@
     background-color: #b3b2b2;
 }
 
-/* 選択されたファイル名を表示するスタイル */
 .file-name-display {
     margin-left: 10px;
     font-size: 0.8rem;
 }
 
-/*選択した画像*/
 .image-preview {
     width: 60%;
 }
 
-/* 隠れたファイル入力フィールド（"ファイルが選択されていません"のテキストを隠す） */
 .hidden {
     opacity: 0;
     position: absolute;
     z-index: -1;
 }
 
-/*季節文字*/
+/* 季節選択 */
 .season {
     font-size: 1rem;
 }
 
-/*チェックボックス*/
 .season-check-container {
     margin: 10px 0;
 }
 
-    /*ラジオボタンの外枠LINEのstyle*/
-    input[type="checkbox"] {
+.season-checkbox {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -106,11 +135,11 @@
     position: relative;
 }
 
-input[type="checkbox"]:checked {
+.season-checkbox:checked {
     background-color: black;
 }
 
-input[type="checkbox"]:checked::after {
+.season-checkbox:checked::after {
     content: '✓';
     color: white;
     position: absolute;
@@ -120,168 +149,151 @@ input[type="checkbox"]:checked::after {
     font-size: 0.8rem;
 }
 
-/*春のみ右にマージン */
-.season-spring {
-    margin-right: 10px;
-}
+/* 季節マージン */
+.season-spring { margin-right: 10px; }
+.season-select { margin: 0 10px; }
+.season-sinter { margin-left: 10px; }
 
-/* 夏と秋は左右にマージン */
-.season-select {
-    margin: 0 10px;
-}
-
-/* 冬のみ左にマージン */
-.season-sinter {
-    margin-left: 10px;
-}
-
-/*label＆必須*/
-.form-group {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-}
-
-/*label*/
-.form-label {
-    width: 100%;
-}
-
-/*input*/
-.form-control {
-    width: 100%;
-    height: 30px;
-    border: 1px solid rgb(219,219,204);
-    border-radius: 6px;
-}
-
-/*商品説明フォーム*/
-.description-control {
-    width: 100%;
-    border: 1px solid rgb(219,219,204);
-    border-radius: 6px;
-    height: 140px;
-}
-
-/*戻るlink＆登録button親要素*/
+/* ボタン */
 .form-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
     align-items: center;
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
-/*戻るボタン*/
-.return-button {
-    display: block;
-    background-color: rgb(219,219,204);
-    border: 1px solid #999;
-    border-radius: 6px;
+.return-button,
+.register-button {
     width: 25%;
     height: 40px;
     font-size: 0.8rem;
     padding: 10px;
     font-weight: bold;
     text-decoration: none;
-    margin: 20px 10px 0 0;
+    margin: 10px 0;
     color: black;
     cursor: pointer;
+}
+
+.return-button {
+    background-color: rgb(219,219,204);
+    border: 1px solid #999;
 }
 
 .return-button:hover {
     background-color: #b3b2b2;
 }
 
-/*登録ボタン*/
 .register-button {
     background-color: rgb(255, 102, 0);
     border: 1px solid rgb(255, 102, 0);
-    border-radius: 6px;
-    width: 25%;
-    height: 40px;
-    font-size: 0.8rem;
-    padding: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 20px 10px 0 0;
-    color: black;
-    cursor: pointer;
 }
 
 .register-button:hover {
     background-color: rgb(230,94,3);
 }
 
+/* レスポンシブ */
 @media screen and (max-width: 768px) {
-    /*商品登録文字*/
-    .product-registration-title {
-        width: 90%;
-        margin-top: 2%;
+    .register-container {
+        padding: 10px 0;
     }
 
-    /*formのstyle*/
+    .product-registration-title,
     .register-form {
         width: 90%;
     }
 
-    /*バリデーションmessage*/
+    .product-registration-title {
+        margin-top: 1%;
+        font-size: 1.2rem;
+    }
+
+    .register-form {
+        padding: 0 10px;
+    }
+
     .form__error {
         height: 18px;
         line-height: 18px;
-        font-size: 0.8rem;
-        margin-top: 2px;
     }
 
-    /*必須*/
-    .required-label {
-        margin: 4px;
-    }
-
-    /*複数選択可*/
+    .required-label,
     .multiple-select {
         margin: 4px;
+        font-size: 0.7rem;
     }
 
-    /*ファイルを選択後のイメージ*/
     .image-preview {
         width: 100%;
+        max-height: 180px;
+        object-fit: contain;
     }
 
-    /*季節文字*/
     .season {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
-    /*チェックボックス*/
+
     .season-check-container {
         margin: 4px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
-    /*商品説明フォーム*/
     .description-control {
-        height: 120px;
+        height: 80px;
+        font-size: 0.9rem;
     }
 
-    /*戻るlink＆登録button親要素*/
     .form-buttons {
-        margin-bottom: 4%;
+        margin-bottom: 3%;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
-    /*戻るボタン*/
-    .return-button {
-        width: 30%;
-        height: 40px;
-        margin: 4px 10px 0 0;
-        padding: auto;
-    }
-
-    /*登録ボタン*/
+    .return-button,
     .register-button {
-        width: 30%;
-        height: 40px;
-        margin: 4px 10px 0 0;
-        padding: auto;
+        width: 45%;
+        height: 35px;
+        margin: 4px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .register-container {
+        padding: 5px 0;
+    }
+
+    .product-registration-title {
+        font-size: 1rem;
+        margin-top: 0.5%;
+    }
+
+    .register-form {
+        width: 95%;
+        padding: 0 5px;
+    }
+
+    .form-control {
+        height: 25px;
+        font-size: 0.9rem;
+    }
+
+    .description-control {
+        height: 60px;
+    }
+
+    .image-preview {
+        max-height: 150px;
+    }
+
+    .return-button,
+    .register-button {
+        width: 100%;
+        margin: 4px 0;
     }
 }
