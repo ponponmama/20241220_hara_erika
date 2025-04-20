@@ -28,7 +28,7 @@ class UpdateProductRequest extends FormRequest
             'price' => 'required|numeric|min:0|max:10000',
             'season' => 'required|array',
             'description' => 'required|max:120',
-            'image' => 'required|image|mimes:jpeg,png',
+            'image' => 'required|mimes:jpeg,png|image',
             'season.*' => 'exists:seasons,id'
         ];
     }
@@ -39,7 +39,6 @@ class UpdateProductRequest extends FormRequest
             'name.required' => '商品名を入力してください',
             'price.required' => '値段を入力してください',
             'price.numeric' => '数値で入力してください',
-            'price.min' => '0~10000円以内で入力してください',
             'price.max' => '0~10000円以内で入力してください',
             'season.required' => '季節を選択してください',
             'description.required' => '商品説明を入力してください',

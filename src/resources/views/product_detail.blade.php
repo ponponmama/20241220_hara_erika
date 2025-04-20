@@ -5,14 +5,14 @@
 @endsection
 
 @section('content')
-@if ($errors->has('image'))
+<div class="container product_detail-container">
+    @if ($errors->has('image'))
     <p class="alert alert-danger">
         {{ $errors->first('image') }}
     </p>
-@endif
-<div class="product_detail-container">
+    @endif
     <div class="breadcrumb">
-        <a href="{{ url('/products') }}" class="breadcrumb-link">
+        <a href="{{ url('/products') }}" class="common-link breadcrumb-link">
             商品一覧
         </a>＞ {{ $product->name }}
     </div>
@@ -24,7 +24,7 @@
                         <img id="detail-image" src="{{ asset('storage/' . $product->image) }}" class="detail-image" alt="商品画像">
                         <div class="custom-file">
                             <input type="file" id="image" name="image" class="hidden" onchange="previewImage();">
-                            <button type="button" onclick="document.getElementById('image').click();" class="btn-select-file">ファイルを選択</button>
+                            <button type="button" onclick="document.getElementById('image').click();" class="common-button btn-select-file">ファイルを選択</button>
                             <span id="file-name-display" class="file-name-display">{{ basename($product->image) }}</span>
                         </div>
                         <div class="form__error">
@@ -34,15 +34,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name" class="label-control">商品名</label>
-                        <input type="text" class="input-control" id="name" name="name" value="{{ $product->name }}">
+                        <label for="name" class="name-section label-control">商品名</label>
+                        <input type="text" class="name-input input-control" id="name" name="name" value="{{ $product->name }}">
                         <div class="form__error">
                             @error('name')
                                 {{ $message }}
                             @enderror
                         </div>
                         <label for="price" class="label-control">値段</label>
-                        <input type="number" class="input-control" id="price" name="price" value="{{ $product->price }}">
+                        <input type="text" class="input-control" id="price" name="price" value="{{ $product->price }}">
                         <div class="form__error">
                             @error('price')
                                 {{ $message }}
@@ -75,14 +75,14 @@
     </form>
     <div class="button-container">
         <div class="update-button-container">
-            <a href="{{ url('products/') }}" class="return-button">戻る</a>
-            <button type="submit" form="update-form" class="update-button">変更を保存</button>
+            <a href="{{ url('products/') }}" class="common-link return-button">戻る</a>
+            <button type="submit" form="update-form" class="common-button update-button">変更を保存</button>
         </div>
         <form action="{{ route('products.delete', ['productId' => $product->id]) }}" method="POST"
         onsubmit="return confirm('本当に削除しますか？');" class="delete-form">
             @csrf
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="delete-button">
+                <button type="submit" class="common-button delete-button">
                     <img src="{{ asset('images/dustbox.png') }}" alt="削除">
                 </button>
         </form>

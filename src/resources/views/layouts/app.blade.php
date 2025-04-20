@@ -15,13 +15,10 @@
 <html>
 <body class="common_body">
     <main class="site_main">
-        <header class="products-header">
+        <header class="product-header">
             <h1 class="top_logo">mogitate</h1>
         </header>
-        <div class="main_container">
             @yield('content')
-            @yield('content-register')
-        </div>
     </main>
 </body>
 </html>

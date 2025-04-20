@@ -10,7 +10,7 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 Route::get('/products/search', [ProductController::class,'search'])->name('products.search');
 
 // 商品登録ページを表示するためのルート
-Route::get('/register', [ProductController::class, 'register'])->name('products.register');
+Route::get('products/register', [ProductController::class, 'register'])->name('products.register');
 
 // 商品登録処理を行うルート
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');

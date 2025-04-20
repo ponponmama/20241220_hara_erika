@@ -4,13 +4,15 @@
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 
-@section('content-register')
-<div class="register-container">
-    <h1 class="product-registration-title">商品登録</h1>
+@section('content')
+<div class="container register-container">
+    <h2 class="title-name">
+        商品登録
+    </h2>
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" class="register-form">
         @csrf
         <p class="form-group">
-            <label for="name" class="form-label">
+            <label for="name" class="form-label name-section">
                 商品名
                 <span class="required-label">必須</span>
             </label>
@@ -27,7 +29,7 @@
                 <span class="required-label">必須</span>
             </label>
         </p>
-        <input type="number" class="form-control" id="price" name="price" placeholder="値段を入力">
+        <input type="text" class="form-control" id="price" name="price" placeholder="値段を入力">
         <p class="form__error">
             @error('price')
                 {{ $message }}
@@ -42,7 +44,7 @@
         <div class="custom-file">
             <input type="file" id="image" name="image" class="hidden" onchange="previewImage();">
             <img id="image-preview" src="#" alt="" class="image-preview">
-            <button type="button" onclick="document.getElementById('image').click();" class="btn-select-file">ファイルを選択</button>
+            <button type="button" onclick="document.getElementById('image').click();" class="common-button  btn-select-file">ファイルを選択</button>
             <span id="file-name-display"></span>
         </div>
         <p class="form__error">
@@ -80,7 +82,7 @@
                 <span class="required-label">必須</span>
             </label>
         </p>
-        <textarea class="description-control" id="description" name="description" placeholder="商品の説明を入力"
+        <textarea class="form-control description-control" id="description" name="description" placeholder="商品の説明を入力"
             autocomplete="off"></textarea>
         <p class="form__error">
             @error('description')
@@ -88,8 +90,8 @@
             @enderror
         </p>
         <div class="form-buttons">
-            <a href="{{ url('products/') }}" class="return-button">戻る</a>
-            <button type="submit" class="register-button">登録</button>
+            <a href="{{ url('products/') }}" class="common-link return-button action-button">戻る</a>
+            <button type="submit" class="common-button register-button action-button">登録</button>
         </div>
     </form>
 </div>

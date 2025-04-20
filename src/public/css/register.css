@@ -1,19 +1,13 @@
 /* 共通のスタイル */
 .form-control,
-.description-control,
-.btn-select-file,
-.return-button,
-.register-button {
+.common-button,
+.common-link {
     border-radius: 6px;
 }
 
-.form-control,
-.description-control {
+.form-control {
     width: 100%;
     border: 1px solid rgb(219,219,204);
-}
-
-.form-control {
     height: 30px;
 }
 
@@ -29,11 +23,11 @@
     align-items: center;
 }
 
-.product-registration-title {
+.title-name {
     width: 60%;
     text-align: left;
     font-size: 1.5rem;
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
 .register-form {
@@ -54,17 +48,12 @@
 
 /* エラーと必須 */
 .form__error {
-    height: 20px;
-    line-height: 20px;
-    color: #ff0000;
     text-align: left;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-top: 2px;
 }
 
 .required-label,
-.multiple-select {
+.multiple-select,
+.file-name-display {
     font-size: 0.8rem;
 }
 
@@ -100,7 +89,6 @@
 
 .file-name-display {
     margin-left: 10px;
-    font-size: 0.8rem;
 }
 
 .image-preview {
@@ -164,8 +152,7 @@
     margin-bottom: 5%;
 }
 
-.return-button,
-.register-button {
+.action-button {
     width: 25%;
     height: 40px;
     font-size: 0.8rem;
@@ -174,7 +161,6 @@
     text-decoration: none;
     margin: 10px 0;
     color: black;
-    cursor: pointer;
 }
 
 .return-button {
@@ -196,28 +182,18 @@
 }
 
 /* レスポンシブ */
-@media screen and (max-width: 768px) {
+@media (width <=767px) {
     .register-container {
         padding: 10px 0;
     }
 
-    .product-registration-title,
+    .title-name,
     .register-form {
-        width: 90%;
+        width: 80%;
     }
 
-    .product-registration-title {
-        margin-top: 1%;
+    .title-name {
         font-size: 1.2rem;
-    }
-
-    .register-form {
-        padding: 0 10px;
-    }
-
-    .form__error {
-        height: 18px;
-        line-height: 18px;
     }
 
     .required-label,
@@ -254,27 +230,25 @@
         gap: 8px;
     }
 
-    .return-button,
-    .register-button {
+    .action-button {
         width: 45%;
-        height: 35px;
         margin: 4px;
-        padding: 0;
+        padding: 8px;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media (min-width: 768px) and (max-width: 912px) {
     .register-container {
         padding: 5px 0;
     }
 
-    .product-registration-title {
+    .title-name {
+        width: 70%;
         font-size: 1rem;
-        margin-top: 0.5%;
     }
 
     .register-form {
-        width: 95%;
+        width: 70%;
         padding: 0 5px;
     }
 
@@ -291,9 +265,8 @@
         max-height: 150px;
     }
 
-    .return-button,
-    .register-button {
-        width: 100%;
+    .action-button {
+        width: 30%;
         margin: 4px 0;
     }
 }

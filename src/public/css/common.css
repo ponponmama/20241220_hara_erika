@@ -8,6 +8,34 @@
     overflow-y: auto;
 }
 
+.common-link,
+.common-button,
+.common-select {
+    cursor: pointer;
+}
+
+/*バリデーションmessage*/
+.form__error {
+    height: 22px;
+    line-height: 22px;
+    color: #ff0000;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/*コントローラーからのメッセージ*/
+.alert {
+    height: 22px;
+    line-height: 22px;
+    color: black;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
 /*画面全体のstyle*/
 .site_main {
     width: 100%;
@@ -16,7 +44,7 @@
 }
 
 /*headerのstyle*/
-.products-header {
+.product-header {
     display: flex;
     align-items: baseline;
 }
@@ -35,7 +63,7 @@
 }
 
 /*headerの下全体のstyle*/
-.main_container{
+.container{
     background-color: rgba(245, 245, 228, 0.884);
     padding: 4px;
 }
@@ -54,7 +82,7 @@
 
 /* 各ページネーションアイテムのスタイル */
 .pagination .page-item {
-    margin: 0 5px;
+    margin: 0 8px;
 }
 
 /* リンクの基本スタイル */
@@ -62,13 +90,12 @@
     color: black;
     background-color: white;
     border: 1px solid white;
-    padding: 6px 8px;
+    padding: 6px 14px;
     text-decoration: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 }
 
 /* ページネーションリンクのホバー時のスタイル */
@@ -90,7 +117,7 @@
     color: black;
 }
 
-@media screen and (max-width: 768px) {
+@media (width <=767px) {
     .common_body {
         height: auto;
         min-height: 100vh;
@@ -116,9 +143,19 @@
     .main_container {
         padding: 10px;
     }
+
+    /*バリデーションmessage*/
+    .form__error {
+        font-size: 1rem;
+    }
+
+    /* リンクの基本スタイル */
+    .pagination .page-link {
+        padding: 4px 12px;
+    }
 }
 
-@media screen and (max-width: 600px) {
+@media (min-width: 768px) and (max-width: 912px) {
     .common_body {
         padding: 5px 0;
     }
@@ -131,4 +168,5 @@
     .main_container {
         padding: 5px;
     }
+
 }
