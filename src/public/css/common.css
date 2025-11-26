@@ -1,3 +1,12 @@
+/* jsMath-cmti10フォントの定義 */
+@font-face {
+    font-family: 'jsMath-cmti10';
+    src: url('/fonts/jsMath-cmti10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
 /*bodyのstyle*/
 .common_body {
     display: flex;
@@ -6,6 +15,8 @@
     min-height: 100vh;
     margin: 0;
     overflow-y: auto;
+    background-color: rgba(255, 255, 255, 1);
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Sans", "ヒラギノ角ゴシック", "Yu Gothic", "游ゴシック", "Meiryo", "メイリオ", sans-serif;
 }
 
 .common-link,
@@ -45,21 +56,27 @@
 
 /*headerのstyle*/
 .product-header {
+    width: 100%;
+    height: 53px;
+    border: 1px solid rgba(244, 244, 244, 1);
+    background: rgba(255, 255, 255, 1);
     display: flex;
-    align-items: baseline;
+    padding: 10px 20px;
+    margin: 0;
 }
 
 /*mogitate文字のstyle*/
 .top_logo {
-    color: rgb(255, 217, 0);
-    font-size: 1.8rem;
-    text-align: start;
-    margin-bottom: 0;
-    margin-left: 15px;
+    width: 112px;
+    height: 33px;
+    line-height: 33px;
+    color: rgba(245, 200, 0, 1);
+    font-size: 30px;
     width: 100%;
-    font-family: "Charm", serif;
-    font-weight: 700;
-    font-style: normal;
+    font-family: 'jsMath-cmti10', serif;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
 }
 
 /*headerの下全体のstyle*/

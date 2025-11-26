@@ -1,47 +1,51 @@
+.product-container {
+    background-color: rgba(248, 248, 248, 1);
+    padding: 70px 20px;
+}
+
 /*商品一覧文字と追加ボタンのstyle*/
 .product-title-bar {
     display: flex;
     width: 100%;
+    height: 50px;
+    border-radius: 5px;
     justify-content: space-between;
-    margin: 2px 0;
-    padding: 10px 10px 0 10px;
+    padding: 0 40px;
 }
 
-/*.title-section {
-    width: 50%;
-    padding: 4px;
-}*/
 
 /*商品一覧文字*/
 .title-name {
     display: block;
     box-sizing: border-box;
-    font-size: 1.5rem;
-    width: 74%;
-    padding: 10px;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+    color: rgba(51, 51, 51, 1);
 }
 
 /*商品を追加ボタンの親要素*/
 .button-container {
     display: flex;
-    width: 26%;
+    height: 100%;
     text-align: center;
     align-items: flex-end;
     justify-content: flex-end;
-    padding: 6px 10px;
+    margin-right: 20px;
 }
 
 /*商品を追加ボタンのstyle*/
 .add-product-button {
+    width: 137px;
+    height: 100%;
     display: block;
     align-items: flex-end;
-    background-color: rgb(255, 102, 0);
-    border: 1px solid rgb(255, 102, 0);
-    border-radius: 6px;
+    background-color: rgba(255, 169, 41, 1);
+    border-radius: 5px;
     width: auto;
-    font-size: 0.8rem;
-    padding: 8px 20px;
-    font-weight: bold;
+    font-size: 16px;
+    padding: 13px 20px;
+    font-weight: 600;
     text-decoration: none;
     color: black;
 }
@@ -57,68 +61,79 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 2px 10px;
+    padding: 0 40px;
 }
 
 /*商品名検索フォームのstyle*/
 .products-search {
     flex-direction: column;
     justify-content: center;
-    width: 25%;
-    padding: 0 10px;
-    margin-left: 10px;
+    width: 240px;
+    height: 267px;
 }
 
 /*検索フォームのstyleの設定*/
 .name-search {
+    width: 100%;
+    height: 50px;
     margin-bottom: 10px;
-    border: 1px solid rgb(219, 219, 204);
-    border-radius: 20px;
+    border: 1px solid rgba(224, 223, 222, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 25px;
     width: 100%;
     height: 36px;
     outline: none;
-    padding: 4px 20px;
+    padding: 14.5px 10px;
+    margin-bottom: 10px;
 }
 
 /*検索フォームブレースホルダデフォルトの設定変更*/
 .name-search::placeholder {
-    font-size: 0.8rem;
-    color: #999;
-    line-height: 30px;
+    font-size: 14px;
+    color: rgba(224, 223, 222, 1);
+    line-height: 21px;
+    font-weight: 300;
 }
 
 /*検索ボタンのstyle*/
 .search_button {
-    background-color: rgb(255, 174, 0);
-    border: 1px solid rgb(255, 174, 0);
-    border-radius: 6px;
+    background-color: rgba(245, 200, 0, 1);
+    border: none;
+    outline: none;
+    border-radius: 5px;
     width: 100%;
-    height: 36px;
-    font-size: 1rem;
-    font-weight: bold;
+    height: 44px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(75, 75, 75, 1);
+
 }
 
 .search_button:hover {
-    background-color: rgb(255, 102, 0);
+    background-color: rgba(75, 75, 75, 1);
+    color: rgba(245, 200, 0, 1);
 }
 
 /*カスタムアイコン*/
 .select-wrapper {
     width: 100%;
     position: relative;
-    height: 30px;
+    height: 43px;
 }
 
 /*Selectのstyle*/
 .price_select {
     width: 100%;
-    font-size: 0.8rem;
-    color: #999;
-    background-color: white;
-    border: 1px solid rgb(219, 219, 204);
+    height: 43px;
+    color: rgba(224, 223, 222, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(224, 223, 222, 1);
     line-height: 30px;
     padding-left: 10px;
-    border-radius: 6px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 300;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -132,9 +147,9 @@
     right: 8px;
     top: 50%;
     transform: translateY(-45%);
-    width: 16px;
+    width: 14px;
     height: 8px;
-    background-color: #b4b4b4;
+    background-color: rgba(190, 177, 166, 1);
     clip-path: polygon(0 0, 50% 24%, 100% 0, 50% 100%, 0 0);
     pointer-events: none;
     z-index: 2;
@@ -147,7 +162,12 @@
 
 /*価格順で表示の文字*/
 .price-order-label {
-    font-size: 1.1rem;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    color: rgba(51, 51, 51, 1);
+    margin: 40px 0 20px 0;
+    font-weight: 600;
 }
 
 /*価格順で表示の下のタグstyle*/
@@ -209,14 +229,17 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 0;
+    gap:20px;
 }
 
 /*各イメージのstyle*/
 .product_list {
-    flex: 0 1 32%;
-    box-shadow: 0px 0px 2px 2px rgb(219, 219, 204);
-    background-color: white;
-    border-radius: 10px;
+    width: 374px;
+    height: 350px;
+    opacity: 1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 1);
     overflow: hidden;
     margin: 0 0 1.1% 1.1%;
 }
