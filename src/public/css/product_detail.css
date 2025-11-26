@@ -1,0 +1,306 @@
+/* 商品詳細ページのコンテナスタイル */
+.product_detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*パンくずリスト*/
+.breadcrumb {
+    display: flex;
+    white-space: nowrap;
+    font-size: 1rem;
+    width: 60%;
+    justify-content: flex-start;
+    margin-top: 6%;
+    margin-bottom: 10px;
+}
+
+/*パンくずリスト内リンク*/
+.breadcrumb-link {
+    color: #007bff;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+/*ボタンを含むform全体のstyle*/
+.update-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    font-size: 1rem;
+}
+
+/*チェックボックスまでのcontainer*/
+.product-options-container {
+    display: flex;
+}
+
+/*イメージ画像＆ファイルを選択&入力フィールド*/
+.image-section, .form-group {
+    flex: 1 0 48%;
+}
+
+/*イメージ画像＆ファイルを選択*/
+.image-section {
+    margin: 0 5px 5px 0;
+}
+
+/*画像イメージ*/
+.detail-image {
+    width: 100%;
+}
+
+/*商品名＆値段＆チェックボックス*/
+.form-group {
+    margin: 0 0 5px 5px;
+}
+
+/*商品説明＆戻るlink＆変更ボタン*全体のstyle*/
+.form-group-description {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ファイル選択ボタンのカスタムスタイル */
+.btn-select-file {
+    background-color: #f0f0f0;
+    border: 1px solid #999;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* 選択されたファイル名を表示するスタイル */
+.file-name-display {
+    margin-left: 10px;
+    font-size: 0.8rem;
+}
+
+/* 隠れたファイル入力フィールド（"ファイルが選択されていません"のテキストを隠す） */
+.hidden {
+    display: none;
+}
+
+/*labelのstyle*/
+.label-control {
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+}
+
+/*入力フィールドのstyle*/
+.input-control {
+    width: 100%;
+    height: 30px;
+    border: 1px solid rgb(219, 219, 204);
+    color: black;
+    border-radius: 6px;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+
+
+.season {
+    font-size: 1rem;
+}
+
+/*ラジオボタンの外枠LINEのstyle*/
+.season-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+}
+
+.season-checkbox:checked {
+    background-color: black;
+}
+
+.season-checkbox:checked::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+}
+
+/*チェックボックスそれぞれのstyle*/
+.season-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*description＆ボタン*/
+.form-group-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*商品説明文*/
+.description-control {
+    width: 100%;
+    border: 1px solid rgb(219, 219, 204);
+    color: black;
+    border-radius: 6px;
+    height: 140px;
+}
+
+.button-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+/*戻るボタン＆変更container*/
+.update-button-container {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*戻るボタン*/
+.return-button {
+    display: block;
+    background-color: rgb(219,219,204);
+    border: 1px solid #999;
+    border-radius: 6px;
+    width: 30%;
+    height: 40px;
+    font-size: 0.8rem;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px 10px 10px 50px;
+    color: black;
+}
+
+/*変更ボタン*/
+.update-button {
+    background-color: rgb(255, 102, 0);
+    border: 1px solid rgb(255, 102, 0);
+    border-radius: 6px;
+    width: 30%;
+    height: 40px;
+    font-size: 0.8rem;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+}
+
+/*削除用のform*/
+.delete-form {
+    flex: 1;
+    width: 24px;
+    height: 24px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+/*削除ボタン*/
+.delete-button {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/*ダストボックス*/
+.delete-button img {
+    width: 18px;
+    height: 18px;
+}
+
+@media (width <=767px){
+    /*パンくずリスト*/
+    .breadcrumb {
+        width: 90%;
+        margin-top: 5%;
+        margin-bottom: 5px;
+    }
+
+    /*ボタンを含むform全体のstyle*/
+    .update-form {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    /*チェックボックスまでのcontainer*/
+    .product-options-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*description＆ボタン*/
+    .form-group-description {
+    display: flex;
+    }
+
+    /*商品説明文*/
+    .description-control {
+        width: 100%;
+        height: 120px;
+    }
+
+    /*戻る＆変更＆削除*/
+    .button-container {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
+    /*戻る＆変更ボタン*/
+    .update-button-container {
+        margin-bottom: 10px;
+    }
+
+    /*戻るボタン*/
+    .return-button {
+        width: 32%;
+    }
+
+    /*変更ボタン*/
+    .update-button {
+        width: 32%;
+    }
+
+    /*delete用formsのstyle*/
+    .delete-form {
+        flex: 1;
+        width: 24px;
+        height: 24px;
+    }
+
+    /*削除ボタン*/
+    .delete-button {
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    /*ダストボックス*/
+    .delete-button img {
+        width: 18px;
+        height: 18px;
+    }
+}
