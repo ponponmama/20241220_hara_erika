@@ -2,11 +2,11 @@
 
 ### mogitate（モギタテ）商品登録管理編集アプリ
 
-![mogitateアプリの画面1](products.png)
-![mogitateアプリの画面2](sort-tag1.png)
-![mogitateアプリの画面3](sort-tag2.png)
-![mogitateアプリの画面4](up-date.png)
-![mogitateアプリの画面5](register.png)
+![mogitateアプリの画面1](mogitate_products.png)
+![mogitateアプリの画面2](products_search_low.png)
+![mogitateアプリの画面3](products_search_high.png)
+![mogitateアプリの画面4](products_up_date.png)
+![mogitateアプリの画面5](products_register.png)
 
 ### 機能要件
 
