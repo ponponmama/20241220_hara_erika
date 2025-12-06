@@ -177,5 +177,5 @@ php artisan db:seed
 
 ### URL
 
-- **開発環境:** [http://localhost/](http://localhost/)
+- **開発環境（トップページ）:** [http://localhost/products](http://localhost/products)
 - **phpMyAdmin:** [http://localhost:8080/](http://localhost:8080/)
