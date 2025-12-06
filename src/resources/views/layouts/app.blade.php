@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mogitate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "jsMath-cmti10";
+            src: url("{{ asset('fonts/jsMath-cmti10.ttf') }}") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     @yield('css')
 </head>
