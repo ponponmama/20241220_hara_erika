@@ -24,10 +24,8 @@
     width: 137px;
     height: 100%;
     display: block;
-    align-items: flex-end;
     background-color: rgba(255, 169, 41, 1);
     border-radius: 5px;
-    width: auto;
     font-size: 16px;
     padding: 13px 20px;
     font-weight: 600;
@@ -47,7 +45,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
     padding: 30px 40px;
     gap:30px;
 }
@@ -55,7 +52,7 @@
 /*商品名検索フォームのstyle*/
 .products-search {
     width: 240px;
-    height: 267px;
+    height: 100%;
 }
 
 .products-search-form {
@@ -65,7 +62,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border-bottom: 1px solid rgb(219, 219, 204);
+}
+
+.name-search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 /*検索フォームのstyleの設定*/
@@ -77,14 +81,12 @@
     border-radius: 25px;
     outline: none;
     padding: 14.5px 10px;
-    margin-bottom: 10px;
 }
 
 /*検索フォームブレースホルダデフォルトの設定変更*/
 .name-search::placeholder {
     font-size: 14px;
     color: rgba(224, 223, 222, 1);
-    line-height: 21px;
     font-weight: 300;
 }
 
@@ -100,7 +102,6 @@
     font-size: 16px;
     font-weight: 600;
     color: rgba(75, 75, 75, 1);
-
 }
 
 .search_button:hover {
@@ -108,11 +109,32 @@
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
+.price-order-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-bottom: 1px solid rgb(219, 219, 204);
+}
+
+/*価格順で表示の文字*/
+.price-order-label {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    color: rgba(51, 51, 51, 1);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
 /*カスタムアイコン*/
 .select-wrapper {
     width: 100%;
     position: relative;
     height: 43px;
+    margin-bottom: 20px;
 }
 
 /* カスタムドロップダウン */
@@ -159,9 +181,8 @@
 
 .custom-dropdown-option {
     padding: 0 10px;
-    height: 41px;
-    line-height: 41px;
-    font-size: 14px;
+    height: 43px;
+    line-height: 43px;
     color: rgba(75, 75, 75, 1);
     cursor: pointer;
     border-bottom: 1px solid rgba(224, 223, 222, 1);
@@ -202,15 +223,11 @@
     transform: rotate(180deg);
 }
 
-/*価格順で表示の文字*/
-.price-order-label {
-    width: 100%;
-    height: 30px;
-    font-size: 20px;
-    line-height: 30px;
-    color: rgba(51, 51, 51, 1);
-    font-weight: 600;
-    margin-bottom: 20px
+
+.custom-dropdown-text {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(224, 223, 222, 1);
 }
 
 /*価格順で表示の下のタグstyle*/
@@ -221,8 +238,8 @@
     color: rgba(75, 75, 75, 1);
     border: 1px solid rgba(245, 200, 0, 1);
     border-radius: 21px;
-    margin: 10px 0;
-    padding: 0 10px;
+    padding: 10px;
+    margin-bottom: 10px;
     height: 41px;
     font-size: 14px;
     font-weight: 300;
@@ -325,122 +342,132 @@
     margin: 16px;
 }
 
-@media (width <=767px) {
-    /*商品を追加ボタンの親要素*/
-    .button-container {
-        width: 50%;
-        align-items: center;
-        margin: auto;
-    }
-
-    /*商品を追加ボタンのstyle*/
-    .add-product-button {
-        width: 100%;
-        font-size: 1rem;
-        padding: 6px;
-    }
-
-    /*画面全体のstyle*/
+@media screen and (min-width: 541px) and (max-width: 768px) {
     .product {
-        width: 90%;
-        display: flex;
-        justify-content: center;
         flex-direction: column;
-        margin: 5%;
+        justify-content: center;
+        padding: 20px;
     }
 
-    /*商品名検索フォームのstyle*/
     .products-search {
-        width: 94%;
-        margin: 3%;
+        width: 100%;
     }
 
-    /*検索フォームブレースホルダデフォルトの設定変更*/
-    .name-search::placeholder{
-    font-size: 1rem;
+    .name-search-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50px;
+        padding: 0 20px;
     }
 
-    /*Selectのstyle*/
-    .price_select {
-        font-size: 1rem;
+    .name-search,
+    .search_button {
+        width: 40%;
+        height: 100%;
     }
 
-    /* Selectカスタムアイコン▽のスタイル */
-    .custom-select-icon {
-        right: 14px;
+    .price-order-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50px;
+        padding: 0 20px;
     }
 
-    /*価格順で表示リセットボタン*/
-    .cross_image {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    position: relative;
+    .price-order-label {
+        width: 20%;
     }
-
-    .cross_image::before {
-        font-size: 0.8rem;
-        top: -20px;
-        left: 88px;
-    }
-
-    /*価格順で表示のタグstyle*/
+    .select-wrapper,
     .sort-tag {
-        padding: 5px 10px;
-        height: 40px;
-        font-size: 1rem;
+        width: 35%;
     }
 
-    /*イメージ全体のstyle*/
+    .custom-dropdown.active .custom-dropdown-menu {
+        width: 100%;
+    }
+
     .products-display {
-        justify-content: center;
-        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
     }
 
-    /*各イメージのstyle*/
     .product_list {
-        margin: 10px;
+        width: 48%;
     }
-
-    /*取得した商品名のstyle*/
-    .list-name {
-        margin: 16px;
-    }
-
-    /*取得した金額のstyle*/
-    .list-price {
-        margin: 16px;
-    }
-
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
-    /*各イメージのstyle*/
+@media screen and (max-width: 540px) {
+    .product {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .product-title-bar {
+        margin-bottom: 10px;
+    }
+
+    .products-search {
+        width: 100%;
+    }
+
+    .name-search-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .name-search,
+    .search_button {
+        width: 45%;
+        height: 100%;
+    }
+
+
+    .price-order-container {
+        justify-content: center;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    .select-wrapper,
+    .sort-tag {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+
+    .custom-dropdown.active .custom-dropdown-menu {
+        width: 100%;
+    }
+
+    .products-display {
+        width: 100%;
+        justify-content: space-between;
+    }
+
     .product_list {
-        flex: 0 1 30%;
-        margin: 0 0 3% 3%;
+        width: 48%;
     }
 
-    /*イメージ画像のstyle*/
-    .list-image {
-        height: 70%;
-    }
-
-    /*イメージ画像下の商品名とpriceのstyle*/
     .list-text {
         flex-direction: column;
-        font-size: 0.8rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 400;
+        gap: 4px
     }
 
-    /*取得した商品名のstyle*/
-    .list-name {
-        margin: 2px;
-        text-align: left;
-    }
-
-    /*取得した金額のstyle*/
+    .list-name,
     .list-price {
-        text-align: left;
-        margin: 2px;
+        flex: 1;
+        width: 100%;
+        height: 25px;
+        text-align: center;
+        margin: 0;
     }
 }
+

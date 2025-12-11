@@ -10,7 +10,7 @@
             <h2 class="title-name">
                 商品一覧
             </h2>
-            <a href="{{ route('products.register') }}" class="common-link add-product-button">
+            <a href="{{ route('products.register') }}" class="add-product-button link">
                 + 商品を追加
             </a>
         </div>
@@ -22,62 +22,63 @@
         <div class="product">
             <div class="products-search">
                 <form class="products-search-form" action="{{ route('products.search') }}" method="GET">
-                    <input class="name-search" type="text" name="query" placeholder="商品名で検索"
-                        value="{{ request('query') }}">
-                    <button type="submit" class="common-button search_button">
-                        検索
-                    </button>
-                    <h3 class="price-order-label">価格順で表示</h3>
-                    <div class="select-wrapper">
-                        <select class="common-select price_select" name="price_search" id="price_search">
-                            <option value="high_to_low" {{ request('price_search') == 'high_to_low' ? 'selected' : '' }}>
-                                高い順に表示</option>
-                            <option value="low_to_high" {{ request('price_search') == 'low_to_high' ? 'selected' : '' }}>
-                                安い順に表示</option>
-                        </select>
-                        <div class="custom-dropdown">
-                            <div class="custom-dropdown-trigger">
-                                <span class="custom-dropdown-text">
-                                    @if (request('price_search') == 'high_to_low')
-                                        高い順に表示
-                                    @elseif(request('price_search') == 'low_to_high')
-                                        安い順に表示
-                                    @else
-                                        価格順で並べ替え
-                                    @endif
-                                </span>
-                                <span class="custom-select-icon"></span>
-                            </div>
-                            <div class="custom-dropdown-menu">
-                                <div class="custom-dropdown-option {{ request('price_search') == 'high_to_low' ? 'selected' : '' }}"
-                                    data-value="high_to_low">高い順に表示</div>
-                                <div class="custom-dropdown-option {{ request('price_search') == 'low_to_high' ? 'selected' : '' }}"
-                                    data-value="low_to_high">安い順に表示</div>
-                            </div>
-                        </div>
+                    <div class="name-search-container">
+                        <input class="name-search input" type="text" name="query" placeholder="商品名で検索" value="{{ request('query') }}">
+                        <button type="submit" class="search_button button">
+                            検索
+                        </button>
                     </div>
-                    @if (request('price_search'))
-                        <div class="tag sort-tag">
-                            @if (request('price_search') == 'high_to_low')
-                                高い順に表示
-                            @elseif(request('price_search') == 'low_to_high')
-                                低い順に表示
-                            @else
-                                価格順で並べ替え
-                            @endif
-                            <a href="{{ route('products.index') }}" class="common-link reset-button"><span
-                                    class="cross_image"></span></a>
+                    <div class="price-order-container">
+                        <h3 class="price-order-label">価格順で表示</h3>
+                        <div class="select-wrapper">
+                            <select class="price_select select" name="price_search" id="price_search">
+                                <option value="high_to_low" {{ request('price_search') == 'high_to_low' ? 'selected' : '' }}>
+                                    高い順に表示</option>
+                                <option value="low_to_high" {{ request('price_search') == 'low_to_high' ? 'selected' : '' }}>
+                                    安い順に表示</option>
+                            </select>
+                            <div class="custom-dropdown select">
+                                <div class="custom-dropdown-trigger">
+                                    <span class="custom-dropdown-text">
+                                        @if (request('price_search') == 'high_to_low')
+                                            高い順に表示
+                                        @elseif(request('price_search') == 'low_to_high')
+                                            安い順に表示
+                                        @else
+                                            価格順で並べ替え
+                                        @endif
+                                    </span>
+                                    <span class="custom-select-icon"></span>
+                                </div>
+                                <div class="custom-dropdown-menu">
+                                    <div class="custom-dropdown-option {{ request('price_search') == 'high_to_low' ? 'selected' : '' }}"
+                                        data-value="high_to_low">高い順に表示</div>
+                                    <div class="custom-dropdown-option {{ request('price_search') == 'low_to_high' ? 'selected' : '' }}"
+                                        data-value="low_to_high">安い順に表示</div>
+                                </div>
+                            </div>
                         </div>
-                    @endif
+                        @if (request('price_search'))
+                            <div class="tag sort-tag">
+                                @if (request('price_search') == 'high_to_low')
+                                    高い順に表示
+                                @elseif(request('price_search') == 'low_to_high')
+                                    低い順に表示
+                                @else
+                                    価格順で並べ替え
+                                @endif
+                                <a href="{{ route('products.index') }}" class="reset-button link"><span class="cross_image"></span></a>
+                            </div>
+                        @endif
+                    </div>
                 </form>
             </div>
             <div class="products-display">
                 @foreach ($products as $product)
                     <div class="product_list">
                         <a href="{{ route('products.show', ['productId' => $product->id]) }}"
-                            class="common-link product-detail-link">
-                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
-                                class="list-image">
+                            class="product-detail-link link">
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="list-image">
                         </a>
                         <div class="list-text">
                             <span class="list-name">{{ $product->name }}</span>
