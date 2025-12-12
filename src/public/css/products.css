@@ -53,6 +53,8 @@
 .products-search {
     width: 240px;
     height: 100%;
+    border-bottom: 1px solid rgb(219, 219, 204);
+
 }
 
 .products-search-form {
@@ -115,7 +117,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border-bottom: 1px solid rgb(219, 219, 204);
 }
 
 /*価格順で表示の文字*/
@@ -342,60 +343,7 @@
     margin: 16px;
 }
 
-@media screen and (min-width: 541px) and (max-width: 768px) {
-    .product {
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-    }
-
-    .products-search {
-        width: 100%;
-    }
-
-    .name-search-container {
-        flex-direction: row;
-        justify-content: space-between;
-        height: 50px;
-        padding: 0 20px;
-    }
-
-    .name-search,
-    .search_button {
-        width: 40%;
-        height: 100%;
-    }
-
-    .price-order-container {
-        flex-direction: row;
-        justify-content: space-between;
-        height: 50px;
-        padding: 0 20px;
-    }
-
-    .price-order-label {
-        width: 20%;
-    }
-    .select-wrapper,
-    .sort-tag {
-        width: 35%;
-    }
-
-    .custom-dropdown.active .custom-dropdown-menu {
-        width: 100%;
-    }
-
-    .products-display {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .product_list {
-        width: 48%;
-    }
-}
-
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 539px) {
     .product {
         flex-direction: column;
         justify-content: center;
@@ -403,7 +351,7 @@
     }
 
     .product-title-bar {
-        margin-bottom: 10px;
+        padding: 0 20px;
     }
 
     .products-search {
@@ -449,7 +397,8 @@
     }
 
     .product_list {
-        width: 48%;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .list-text {
@@ -468,6 +417,65 @@
         height: 25px;
         text-align: center;
         margin: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 540px) and (max-width: 1024px) {
+    .product {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .products-search {
+        width: 100%;
+        padding: 0 20px;
+
+    }
+
+    .name-search-container,
+    .price-order-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .name-search,
+    .search_button {
+        width: 40%;
+        height: 100%;
+    }
+
+    .price-order-label {
+        width: 20%;
+        padding-left: 10px;
+    }
+
+    .price-order-label,
+    .select-wrapper {
+        margin: 0;
+    }
+
+    .select-wrapper,
+    .sort-tag {
+        width: 35%;
+    }
+
+    .custom-dropdown.active .custom-dropdown-menu {
+        width: 100%;
+    }
+
+    .products-display {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .product_list {
+        width: 48%;
     }
 }
 
