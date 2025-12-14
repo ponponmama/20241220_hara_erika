@@ -31,6 +31,7 @@
     display: flex;
     flex-direction: column;
     width: 800px;
+    margin: 0 auto;
 }
 
 /*チェックボックスまでのcontainer*/
@@ -218,9 +219,9 @@
 }
 
 /*戻るボタン*/
-.return-button {
+.return-button,
+.update-button {
     display: block;
-    background-color: rgba(224, 223, 222, 1);
     border: none;
     border-radius: 5px;
     width: 200px;
@@ -233,19 +234,21 @@
     color: rgba(75, 75, 75, 1);
 }
 
+.return-button {
+    background-color: rgba(224, 223, 222, 1);
+}
+
+.return-button:hover {
+    background-color: rgba(200, 203, 222, 1);
+}
+
 /*変更ボタン*/
 .update-button {
     background-color: rgba(245, 200, 0, 1);
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
-    border: none;
-    border-radius: 5px;
-    width: 200px;
-    height: 100%;
-    font-size: 16px;
-    padding: 13px 10px;
-    font-weight: 600;
-    text-decoration: none;
-    color: rgba(75, 75, 75, 1);
+}
+
+.update-button:hover {
+    background-color: rgba(221, 180, 0, 1);
 }
 
 /*削除用のform*/
@@ -270,15 +273,14 @@
     height: 22.67px;
 }
 
-@media (width <=767px){
+@media screen and (max-width: 540px) {
     /*パンくずリスト*/
     .breadcrumb {
         width: 90%;
-        margin-top: 5%;
-        margin-bottom: 5px;
+        margin: 0 auto;
     }
 
-    /*ボタンを含むform全体のstyle*/
+    /*formのstyle*/
     .update-form {
         display: flex;
         flex-direction: column;
@@ -289,58 +291,65 @@
     .product-options-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .season-check-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .season-label {
+        width: 100%;
+        margin-right: 10%;
+    }
+
+    .season-label:last-child {
+        margin-right: 0;
     }
 
     /*description＆ボタン*/
     .form-group-description {
-    display: flex;
+        display: flex;
+        align-items: center;
     }
 
-    /*商品説明文*/
-    .description-control {
-        width: 100%;
-        height: 120px;
-    }
-
-    /*戻る＆変更＆削除*/
     .button-container {
-        width: 100%;
-        margin-bottom: 4%;
+        width: 80%;
+        margin: 0 auto;
     }
 
-    /*戻る＆変更ボタン*/
-    .update-button-container {
-        margin-bottom: 10px;
-    }
-
-    /*戻るボタン*/
-    .return-button {
-        width: 32%;
-    }
-
-    /*変更ボタン*/
+    .return-button,
     .update-button {
-        width: 32%;
+        width: 40%;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 1024px) {
+    .breadcrumb {
+        width: 80%;
+        margin: 0 auto;
     }
 
-    /*delete用formsのstyle*/
-    .delete-form {
-        flex: 1;
-        width: 24px;
-        height: 24px;
+    .update-form {
+        width: 80%;
+        margin: 0 auto;
     }
 
-    /*削除ボタン*/
-    .delete-button {
-        border: none;
-        background: none;
-        padding: 0;
-        cursor: pointer;
+    .button-container {
+        width: 80%;
+        margin: 0 auto;
     }
 
-    /*ダストボックス*/
-    .delete-button img {
-        width: 18px;
-        height: 18px;
-    }
 }

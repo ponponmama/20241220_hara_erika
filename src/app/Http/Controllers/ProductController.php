@@ -40,11 +40,17 @@ class ProductController extends Controller
         }
 
         // セッションから価格ソートオプションを取得または更新
-        if ($request->has('price_search')) {
+        if ($request->has('price_search') && !empty($request->input('price_search'))) {
             $priceSearch = $request->input('price_search');
             session(['price_search' => $priceSearch]);
         } else {
-            $priceSearch = session('price_search', '');
+            // 検索フォームが送信された場合、価格順のソートをリセット
+            if ($request->has('query')) {
+                $priceSearch = '';
+                session()->forget('price_search');
+            } else {
+                $priceSearch = session('price_search', '');
+            }
         }
 
         // 価格順のソート処理をクエリに適用
@@ -54,10 +60,11 @@ class ProductController extends Controller
             $query->orderBy('price', 'asc');
         }
 
-        $products = $query->paginate(6)->appends([
-            'query' => request('query'),
-            'price_search' => request('price_search')
-        ]);
+        $appends = ['query' => request('query')];
+        if (!empty($priceSearch)) {
+            $appends['price_search'] = $priceSearch;
+        }
+        $products = $query->paginate(6)->appends($appends);
 
         return view('products', compact('products'));
     }

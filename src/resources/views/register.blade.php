@@ -44,7 +44,7 @@
         <div class="custom-file">
             <input type="file" id="image" name="image" class="hidden" onchange="previewImage();">
             <img id="image-preview" src="#" alt="" class="image-preview">
-            <button type="button" onclick="document.getElementById('image').click();" class="common-button  btn-select-file">ファイルを選択</button>
+            <button type="button" onclick="document.getElementById('image').click();" class=" btn-select-file button">ファイルを選択</button>
             <span id="file-name-display"></span>
         </div>
         <p class="form__error">
@@ -52,23 +52,23 @@
                 {{ $message }}
             @enderror
         </p>
-        <p class="form-group">
+        <p class="form-label">
             <span class="season">季節</span>
             <span class="required-label">必須</span>
             <span class="multiple-select">複数選択可</span>
         </p>
         <div class="season-check-container">
             <label for="spring" class="season-label">
-                <input type="checkbox" name="season[]" value="春" id="spring" class="season-checkbox season-spring"> 春
+                <input type="checkbox" name="season[]" value="春" id="spring" class="season-checkbox season-spring"><span class="season-label-text">春</span>
             </label>
             <label for="summer" class="season-label">
-                <input type="checkbox" name="season[]" value="夏" id="summer" class="season-checkbox season-select"> 夏
+                <input type="checkbox" name="season[]" value="夏" id="summer" class="season-checkbox season-select"><span class="season-label-text">夏</span>
             </label>
             <label for="autumn" class="season-label">
-                <input type="checkbox" name="season[]" value="秋" id="autumn" class="season-checkbox season-select"> 秋
+                <input type="checkbox" name="season[]" value="秋" id="autumn" class="season-checkbox season-select"><span class="season-label-text">秋</span>
             </label>
             <label for="winter" class="season-label">
-                <input type="checkbox" name="season[]" value="冬" id="winter" class="season-checkbox season-sinter"> 冬
+                <input type="checkbox" name="season[]" value="冬" id="winter" class="season-checkbox season-sinter"><span class="season-label-text">冬</span>
             </label>
         </div>
         <p class="form__error">
@@ -77,7 +77,7 @@
             @enderror
         </p>
         <p class="form-group">
-            <label for="description" class="description-label">
+            <label for="description" class="form-label">
                 商品説明
                 <span class="required-label">必須</span>
             </label>
@@ -90,8 +90,8 @@
             @enderror
         </p>
         <div class="form-buttons">
-            <a href="{{ url('products/') }}" class="common-link return-button action-button">戻る</a>
-            <button type="submit" class="common-button register-button action-button">登録</button>
+            <a href="{{ url('products/') }}" class="return-button link">戻る</a>
+            <button type="submit" class="register-button button">登録</button>
         </div>
     </form>
 </div>

@@ -32,6 +32,8 @@
                         <h3 class="price-order-label">価格順で表示</h3>
                         <div class="select-wrapper">
                             <select class="price_select select" name="price_search" id="price_search">
+                                <option value="" {{ !request('price_search') ? 'selected' : '' }}>
+                                    価格順で並べ替え</option>
                                 <option value="high_to_low" {{ request('price_search') == 'high_to_low' ? 'selected' : '' }}>
                                     高い順に表示</option>
                                 <option value="low_to_high" {{ request('price_search') == 'low_to_high' ? 'selected' : '' }}>
@@ -58,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if (request('price_search'))
+                        @if (!empty(request('price_search')))
                             <div class="tag sort-tag">
                                 @if (request('price_search') == 'high_to_low')
                                     高い順に表示
