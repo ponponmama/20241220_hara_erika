@@ -176,6 +176,12 @@ php artisan migrate
 php artisan db:seed
 ```
 
+＊マイグレーションとシーダーを同時に実行する場合
+
+```bash
+php artisan migrate --seed
+```
+
 ### URL
 
 - **開発環境（トップページ）:** [http://localhost/products](http://localhost/products)
