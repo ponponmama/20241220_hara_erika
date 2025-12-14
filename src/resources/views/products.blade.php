@@ -7,12 +7,18 @@
 @section('content')
     <div class="container product-container">
         <div class="product-title-bar">
-            <h2 class="title-name">
-                商品一覧
-            </h2>
-            <a href="{{ route('products.register') }}" class="add-product-button link">
-                + 商品を追加
-            </a>
+            @if (request('query'))
+                <h2 class="title-name">
+                    "{{ request('query') }}"の商品一覧
+                </h2>
+            @else
+                <h2 class="title-name">
+                    商品一覧
+                </h2>
+                <a href="{{ route('products.register') }}" class="add-product-button link">
+                    + 商品を追加
+                </a>
+            @endif
         </div>
         @if (session('success'))
             <div class="alert alert-success">
@@ -23,7 +29,8 @@
             <div class="products-search">
                 <form class="products-search-form" action="{{ route('products.search') }}" method="GET">
                     <div class="name-search-container">
-                        <input class="name-search input" type="text" name="query" placeholder="商品名で検索" value="{{ request('query') }}">
+                        <input class="name-search input" type="text" name="query" placeholder="商品名で検索"
+                            value="{{ request('query') }}">
                         <button type="submit" class="search_button button">
                             検索
                         </button>
@@ -32,12 +39,11 @@
                         <h3 class="price-order-label">価格順で表示</h3>
                         <div class="select-wrapper">
                             <select class="price_select select" name="price_search" id="price_search">
-                                <option value="" {{ !request('price_search') ? 'selected' : '' }}>
-                                    価格順で並べ替え</option>
-                                <option value="high_to_low" {{ request('price_search') == 'high_to_low' ? 'selected' : '' }}>
-                                    高い順に表示</option>
-                                <option value="low_to_high" {{ request('price_search') == 'low_to_high' ? 'selected' : '' }}>
-                                    安い順に表示</option>
+                                <option value="" {{ !request('price_search') ? 'selected' : '' }}>価格順で並べ替え</option>
+                                <option value="high_to_low"
+                                    {{ request('price_search') == 'high_to_low' ? 'selected' : '' }}>高い順に表示</option>
+                                <option value="low_to_high"
+                                    {{ request('price_search') == 'low_to_high' ? 'selected' : '' }}>安い順に表示</option>
                             </select>
                             <div class="custom-dropdown select">
                                 <div class="custom-dropdown-trigger">
@@ -62,14 +68,17 @@
                         </div>
                         @if (!empty(request('price_search')))
                             <div class="tag sort-tag">
-                                @if (request('price_search') == 'high_to_low')
-                                    高い順に表示
-                                @elseif(request('price_search') == 'low_to_high')
-                                    低い順に表示
-                                @else
-                                    価格順で並べ替え
-                                @endif
-                                <a href="{{ route('products.index') }}" class="reset-button link"><span class="cross_image"></span></a>
+                                <span class="sort-tag-text">
+                                    @if (request('price_search') == 'high_to_low')
+                                        高い順に表示
+                                    @elseif(request('price_search') == 'low_to_high')
+                                        低い順に表示
+                                    @else
+                                        価格順で並べ替え
+                                    @endif
+                                </span>
+                                <a href="{{ route('products.index') }}" class="reset-button link"><span
+                                        class="cross_image"></span></a>
                             </div>
                         @endif
                     </div>
@@ -80,7 +89,8 @@
                     <div class="product_list">
                         <a href="{{ route('products.show', ['productId' => $product->id]) }}"
                             class="product-detail-link link">
-                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="list-image">
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                                class="list-image">
                         </a>
                         <div class="list-text">
                             <span class="list-name">{{ $product->name }}</span>
