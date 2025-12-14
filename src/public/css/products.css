@@ -9,6 +9,7 @@
 
 /*商品一覧文字*/
 .title-name {
+    width: 128px;
     height: 48px;
     line-height: 48px;
     display: block;
@@ -47,7 +48,7 @@
     min-height: 75vh;
     display: flex;
     padding: 30px 40px;
-    gap:30px;
+    gap:20px;
 }
 
 /*商品名検索フォームのstyle*/

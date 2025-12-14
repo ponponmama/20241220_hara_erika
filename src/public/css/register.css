@@ -1,9 +1,13 @@
 /* コンテナとフォーム */
 .register-container {
-    width: 100%;
+    width: 1512px;
+    height: 930px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
+    padding: 70px 376px;
+    box-sizing: border-box;
 }
 
 .title-name {
@@ -17,20 +21,26 @@
 
 .register-form {
     width: 760px;
-    margin: 30px 0;
 }
 
 /* フォーム要素 */
 .form-group {
     width: 100%;
+    margin-bottom: 9px;
+}
+
+.label-group {
+    width: 100%;
+    height: 24px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .form-label {
     width: 100%;
-    height: 24px;
-    margin-bottom: 10px;
+    height: 100%;
+    line-height: 24px;
     font-size: 16px;
     font-weight: 300;
     color: rgba(75, 75, 75, 1);
@@ -53,9 +63,10 @@
 
 .description-control {
     height: 160px;
+    resize: none;
+    line-height: 1.2;
+    vertical-align: top;
 }
-
-
 
 .required-label,
 .multiple-select,
@@ -122,7 +133,6 @@
     color: rgba(75, 75, 75, 1);
     font-weight: 300;
     line-height: 24px;
-    margin-bottom: 10px;
 }
 
 .season-check-container {

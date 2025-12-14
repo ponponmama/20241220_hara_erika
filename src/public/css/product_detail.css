@@ -92,6 +92,7 @@
     height: 24px;
     display: block;
     font-size: 16px;
+    margin-bottom: 10px;
 }
 
 /*入力フィールドのstyle*/
@@ -103,7 +104,7 @@
     border-radius: 5px;
     padding: 11px 10px;
     font-size: 14px;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .season {
