@@ -3,10 +3,11 @@
 ### mogitate（モギタテ）商品登録管理編集アプリ
 
 ![mogitateアプリの画面1](products.png)
-![mogitateアプリの画面2](sort-tag1.png)
-![mogitateアプリの画面3](sort-tag2.png)
-![mogitateアプリの画面4](up-date.png)
-![mogitateアプリの画面5](register.png)
+![mogitateアプリの画面2](products_search_query.png)
+![mogitateアプリの画面3](products_search_query_high.png)
+![mogitateアプリの画面4](products_search_query_low.png)
+![mogitateアプリの画面5](products_detail.png)
+![mogitateアプリの画面6](products_register.png)
 
 ### 機能要件
 
@@ -14,7 +15,7 @@
 - **商品並び替え機能**:「検索ボタン」下部のポップアップから「高い順に表示」、「低い順に表示」を選択して商品を並び替えることができる。結果の表示の際に、並び替え条件をタグに表示することができる。
 - **商品削除機能**: 右下の「ゴミ箱ボタン」をクリックするとデーターベース(products テーブル)に保存されている商品情報を削除することができる。
 - **バリデーション**: 登録と変更の際に FormRequest を使用してバリデーションを行う。
-- **レスポンシブデザイン**: タブレット・スマートフォン用にブレイクポイント 768px でレスポンシブデザインを実装。
+- **レスポンシブデザイン**: タブレット・スマートフォン用にレスポンシブデザインを実装。
 - **ストレージ**: 商品の画像をストレージに保存。
 
 ### 作業範囲
