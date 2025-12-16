@@ -1,10 +1,6 @@
 /* コンテナとフォーム */
 .register-container {
-    width: 1512px;
-    height: 930px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
     padding: 70px 376px;
 }
 
@@ -250,14 +246,22 @@
 
 /* レスポンシブ */
 @media screen and (max-width: 540px) {
+    .register-container {
+        height: calc(100vh - 53px);
+        padding: 20px 0;
+    }
+
     .title-name {
+        width: 80%;
+        margin: 0 auto;
         font-size: 24px;
     }
 
-    .title-name,
     .register-form {
         width: 80%;
+        height: auto;
         margin: 0 auto;
+        padding: 20px 0;
     }
 
     .season-check-container {
@@ -291,6 +295,11 @@
 }
 
 @media screen and (min-width: 541px) and (max-width: 1024px) {
+    .register-container {
+        padding: 30px;
+        height: calc(100vh - 53px);
+    }
+
     .title-name {
         font-size: 28px;
     }
@@ -301,4 +310,10 @@
         margin: 0 auto;
     }
 
+    .register-form {
+        height: auto;
+    }
+
 }
+
+

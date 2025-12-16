@@ -280,6 +280,7 @@
     /*パンくずリスト*/
     .breadcrumb {
         width: 90%;
+        height: 100%;
         margin: 0 auto;
     }
 
@@ -288,6 +289,7 @@
         display: flex;
         flex-direction: column;
         width: 90%;
+        height: 100%;
     }
 
     /*チェックボックスまでのcontainer*/
@@ -295,11 +297,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100%;
     }
 
     .image-section {
         width: 90%;
         margin: 0 auto;
+        height: 100%;
     }
 
     .form-group {
