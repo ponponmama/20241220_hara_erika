@@ -37,6 +37,7 @@
 /*チェックボックスまでのcontainer*/
 .product-options-container {
     display: flex;
+    height: 353px;
     gap: 30px;
 }
 
@@ -49,6 +50,7 @@
 /*画像イメージ*/
 .detail-image {
     width: 100%;
+    height: 281px;
 }
 
 /*商品名＆値段＆チェックボックス*/
